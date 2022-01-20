@@ -1,9 +1,11 @@
+const modal = document.getElementById("contact_modal");
+
+//Affiche le formulaire de contact
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
 }
 
+//Ferme le formulaire de contact
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }

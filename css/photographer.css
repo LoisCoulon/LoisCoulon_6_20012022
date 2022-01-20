@@ -1,3 +1,8 @@
+:root {
+    --primary : #901C1C;
+    --secondary : #D3573C;
+}
+
 #contact_modal {
     display: none;
 }
@@ -16,7 +21,7 @@
     width: 170px;
     height: 70px;
     border: none;
-    background-color: #901C1C;
+    background-color: var(--primary);
     border-radius: 5px;
     cursor: pointer;
 }

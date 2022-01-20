@@ -15,7 +15,7 @@ header {
 }
 
 h1 {
-    color: #901C1C;
+    color: var(--primary);
     margin-right: 100px;
 }
 
@@ -39,9 +39,14 @@ h1 {
     flex-direction: column;
 }
 
+.photographer_section article a{
+    text-decoration: none;
+}
+
 .photographer_section article h2 {
-    color: #D3573C;
+    color: var(--secondary);
     font-size: 36px;
+    text-decoration: none;
 }
 
 .photographer_section article img {
