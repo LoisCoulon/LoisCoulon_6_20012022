@@ -1,3 +1,4 @@
+//Not used
 function photographerFactory(data) {
     const { name, portrait } = data;
 

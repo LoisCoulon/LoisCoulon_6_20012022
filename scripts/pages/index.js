@@ -24,12 +24,15 @@
 
             const location = document.createElement('p');
             location.textContent = data[i].city + ", " + data[i].country;
+            location.setAttribute("class", "location");
 
             const tagline = document.createElement('p');
-            tagline.textContent = data[i].tagLine;
+            tagline.textContent = data[i].tagline;
+            tagline.setAttribute("class", "tagline");
 
             const price = document.createElement('p');
             price.textContent = data[i].price + "€/jour";
+            price.setAttribute("class", "price");
 
             article.appendChild(img);
             article.appendChild(h2);
@@ -38,6 +41,7 @@
             article.appendChild(price);
             photographersSection.appendChild(article);
         }
+        return data;
     }
     
     // async function getPhotographers() {

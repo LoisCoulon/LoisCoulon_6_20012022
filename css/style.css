@@ -1,8 +1,10 @@
 @import url("photographer.css");
 
-body {
-    font-family: "DM Sans", sans-serif;
+*{
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    font-family: "DM Sans", sans-serif;
 }
 
 
@@ -39,10 +41,6 @@ h1 {
     flex-direction: column;
 }
 
-.photographer_section article a{
-    text-decoration: none;
-}
-
 .photographer_section article h2 {
     color: var(--secondary);
     font-size: 36px;
@@ -52,4 +50,22 @@ h1 {
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+
+}
+
+.photographer_section article .location {
+    color: var(--primary);
+    font-size: 13px;
+}
+
+.photographer_section article .tagline {
+    font-size: 12px;
+}
+
+.photographer_section article .price {
+    font-size: 12px;
+    color: var(--grey);
 }

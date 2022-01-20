@@ -1,6 +1,8 @@
 :root {
     --primary : #901C1C;
     --secondary : #D3573C;
+    --light : #fafafa;
+    --grey : #525252;
 }
 
 #contact_modal {
