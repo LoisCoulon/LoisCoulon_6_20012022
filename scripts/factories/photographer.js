@@ -12,8 +12,10 @@ function photographerFactory(data) {
         const pTagline = document.createElement('p');
         const pPrice = document.createElement('p');
         const a = document.createElement('a');
+        const alt = "photo de profil de " + name;
 
         img.setAttribute("src", picture);
+        img.setAttribute("alt", alt);
         article.setAttribute("class", "photographer")
         location.setAttribute("class", "location");
         pTagline.setAttribute("class", "tagline");
