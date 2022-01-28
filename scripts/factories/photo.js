@@ -23,10 +23,9 @@ function photoFactory(data) {
 		div.appendChild(nbLike)
 		div.appendChild(heart)
 
-
-		
+		return article		
 
 	}
 
-	return { title, photographerId, image, likes, date, price, id }
+	return { title, photographerId, image, likes, date, price, id, getPhotos }
 }

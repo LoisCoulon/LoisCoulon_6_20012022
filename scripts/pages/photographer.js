@@ -23,19 +23,19 @@ async function displayPhotographer(photographer) {
 
 //display the photos 
 async function displayMedia(media) {
-	const photoSection = document.querySelector(".photo_section")
+	const cards = document.querySelector(".cards")
 	console.log(media)
 
 	media.foreach((photo) => {
 		const mediaModel = photoFactory(photo)
 		const photoDOM = mediaModel.getPhotos()
-		photoSection.appendChild(photoDOM)
+		cards.appendChild(photoDOM)
 	})
 }
 
 async function init() {
 	const { photographerData } = await getPhotographer()
-	// displayPhotographer(photographerData)
+	displayPhotographer(photographerData)
 	displayMedia(photographerData)
 }
 init()
