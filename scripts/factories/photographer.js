@@ -59,10 +59,10 @@ function photographerFactory(data) {
 		article.appendChild(location)
 		article.appendChild(pTagline)
 
-
 		return (article)
 
 	}	
 
 	return { name, portrait, city, country, tagline, price, id, getUserCardDOM, getPhotographerDOM }
 }
+

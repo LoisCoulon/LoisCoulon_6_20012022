@@ -12,7 +12,7 @@ async function getPhotographer() {
 		})
 }
   
-// display the photographer
+// display the photographer infos
 async function displayPhotographer(photographer) {
 	const photographHeader = document.querySelector(".photograph-header")
 
@@ -21,8 +21,21 @@ async function displayPhotographer(photographer) {
 	photographHeader.appendChild(photographerDOM)
 }
 
+//display the photos 
+async function displayMedia(media) {
+	const photoSection = document.querySelector(".photo_section")
+	console.log(media)
+
+	media.foreach((photo) => {
+		const mediaModel = photoFactory(photo)
+		const photoDOM = mediaModel.getPhotos()
+		photoSection.appendChild(photoDOM)
+	})
+}
+
 async function init() {
 	const { photographerData } = await getPhotographer()
-	displayPhotographer(photographerData)
+	// displayPhotographer(photographerData)
+	displayMedia(photographerData)
 }
 init()
