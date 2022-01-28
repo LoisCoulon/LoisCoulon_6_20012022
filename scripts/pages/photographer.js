@@ -24,7 +24,6 @@ async function displayPhotographer(photographer) {
 //display the photos 
 async function displayMedia(media) {
 	const cards = document.querySelector(".cards")
-	console.log(media)
 
 	media.foreach((photo) => {
 		const mediaModel = photoFactory(photo)
@@ -32,6 +31,14 @@ async function displayMedia(media) {
 		cards.appendChild(photoDOM)
 	})
 }
+
+// function getUrlId() {
+// 	const queryString = window.location.search
+// 	const urlParams = new URLSearchParams(queryString);
+// 	const urlId = urlParams.get('id');
+
+// 	return urlId
+// }
 
 async function init() {
 	const { photographerData } = await getPhotographer()

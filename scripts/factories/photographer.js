@@ -2,7 +2,7 @@ function photographerFactory(data) {
 	const { name, portrait, city, country, tagline, price, id } = data
 	
 	const picture = `assets/photographers/${portrait}`
-	const link = `photographer.html?${id}`
+	const link = `photographer.html?id=${id}`
 
 	function getUserCardDOM() {
 		const article = document.createElement( "article" )
