@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+     <!-- fontAwesome -->
+     <script src="https://kit.fontawesome.com/e90458a561.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -13,8 +15,26 @@
     </header>
     <main id="main">
       <div class="photograph-header">
+        <div class="info">
+          <h2>name</h2>
+          <p class="location">City, Country</p>
+          <p class="tagline">Tag</p>
+        </div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <img src="./assets/images/Ellie_Rose/Architecture_Connected_Curves.jpg" alt="">
       </div>
+      <section class="photo_section">
+        <div class="filters">
+          <label for="filter">Trier par</label>
+          <select name="filter" id="filter">
+            <option value="Popularité">Popularité</option>
+            <option value="Date">Date</option>
+            <option value="Titre">Titre</option>
+          </select>
+        </div>
+        <div class="cards" id="cards">
+        </div>
+      </section>
     </main>
     <div id="contact_modal">
 			<div class="modal">
@@ -31,8 +51,9 @@
 				</form>
 			</div>
 		</div>
-    <script src="scripts/factories/photographer.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
-    <script src="./scripts/utils/contactForm.js"></script>
+    <script type="text/javascript" src="scripts/factories/photographer.js"></script>
+    <script type="text/javascript" src="scripts/factories/photo.js"></script>
+    <script type="text/javascript" src="scripts/pages/photographer.js"></script>
+    <script type="text/javascript" src="./scripts/utils/contactForm.js"></script>
   </body>
 </html>

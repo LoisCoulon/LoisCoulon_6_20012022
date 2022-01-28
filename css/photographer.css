@@ -13,6 +13,33 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+
+}
+.photograph-header h2 {
+    color: var(--secondary);
+    font-size: 46px;
+    text-decoration: none;
+}
+
+.photograph-header .location {
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.photograph-header .tagline {
+    font-size: 20px;
+    color: var(--grey);
 }
 
 .contact_button {
@@ -80,4 +107,39 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.photo_section{
+    margin: 50px 100px;
+}
+
+.photo_section .filters label{
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+.photo_section .filters select {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    /* height: 70px; */
+    border: none;
+    background-color: var(--primary);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 20px;
+}
+/* .photo_section .filters .arrow{
+    transition: all 0.125s ease-in-out 0s;
+    transform: rotate(180deg);
+} */
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-top: 50px;
 }
