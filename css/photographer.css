@@ -143,3 +143,9 @@ form input {
     gap: 70px;
     margin-top: 50px;
 }
+
+.cards img {
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+}

@@ -1,5 +1,5 @@
 function photoFactory(data) {
-	const { title, photographerId, image, likes, date, price, id } = data
+	const { title, photographerId, image, likes, date, price, id, video } = data
 	
 	function getPhotos() {
 
@@ -9,6 +9,23 @@ function photoFactory(data) {
 		const div = document.createElement('div')
 		const nbLike = document.createElement('span')
 		const heart = document.createElement('i')
+
+		let name = ""
+		if(photographerId === 82) {
+			name = "Tracy"
+		} else if (photographerId === 243) {
+			name = "Mimi"
+		} else if (photographerId === 930) {
+			name = "Ellie-Rose"
+		} else if (photographerId === 527) {
+			name = "Nabeel"
+		} else if (photographerId === 925) {
+			name = "Rhode"
+		} else if (photographerId === 195) {
+			name = "Marcel"
+		}
+	
+		const picture = `assets/images/${name}/${image ? image : video}`
 
 		img.setAttribute("src", picture)
 		img.setAttribute("alt", title)
@@ -27,5 +44,5 @@ function photoFactory(data) {
 
 	}
 
-	return { title, photographerId, image, likes, date, price, id, getPhotos }
+	return { title, photographerId, image, likes, date, price, id, name, getPhotos }
 }
