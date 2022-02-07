@@ -73,27 +73,32 @@ h1 {
   align-items: center;
 }
 .photograph-header img {
+  order: 3;
   height: 200px;
   width: 200px;
   border-radius: 50%;
   overflow: hidden;
   object-fit: cover;
 }
-.photograph-header h2 {
+.photograph-header .info {
+  order: 1;
+}
+.photograph-header .info .name {
   color: #D3573C;
   font-size: 46px;
   text-decoration: none;
 }
-.photograph-header .location {
+.photograph-header .info .location {
   color: #901C1C;
   font-size: 22px;
 }
-.photograph-header .tagline {
+.photograph-header .info .tagline {
   font-size: 20px;
   color: #525252;
 }
 
 .contact_button {
+  order: 2;
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -104,6 +109,10 @@ h1 {
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+}
+.contact_button:hover, .contact_button:focus {
+  color: black;
+  background-color: #D3573C;
 }
 
 .modal {
@@ -129,25 +138,24 @@ h1 {
   font-weight: normal;
   text-align: center;
 }
-
-form {
+.modal form {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
 }
-form label {
+.modal form label {
   color: #312E2E;
   font-size: 36px;
 }
-form div {
+.modal form div {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: self-start;
   margin-bottom: 26px;
 }
-form input {
+.modal form input {
   width: 100%;
   height: 68px;
   border: none;
@@ -181,10 +189,43 @@ form input {
   gap: 70px;
   margin-top: 50px;
 }
+.cards article {
+  height: 40vh;
+  width: 20vw;
+  border-radius: 5px;
+}
 .cards img {
-  height: 350px;
-  width: 350px;
+  height: 90%;
+  width: 100%;
   object-fit: cover;
+  border-radius: 5px;
+}
+.cards .card-info {
+  display: flex;
+  justify-content: space-between;
+}
+.cards .card-info h2 {
+  color: #901C1C;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cards .card-info span {
+  align-self: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #901C1C;
+  margin: 3px;
+}
+.cards .card-info .fas {
+  font-size: 18px;
+  align-self: center;
+  margin: 3px;
+  color: #901C1C;
+}
+.cards .card-info .like {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */

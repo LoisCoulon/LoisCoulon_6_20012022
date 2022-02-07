@@ -9,6 +9,7 @@ function photoFactory(data) {
 		const div = document.createElement('div')
 		const nbLike = document.createElement('span')
 		const heart = document.createElement('i')
+		const like = document.createElement("div")
 
 		let name = ""
 		if(photographerId === 82) {
@@ -30,19 +31,23 @@ function photoFactory(data) {
 		img.setAttribute("src", picture)
 		img.setAttribute("alt", title)
 		heart.setAttribute("class", "fas fa-heart")
+		div.setAttribute("class", "card-info")
+		like.setAttribute("class", "like")
+
 
 		h2.textContent = title
 		nbLike.textContent = likes
 
 		article.appendChild(img)
-		article.appendChild(h2)
 		article.appendChild(div)
-		div.appendChild(nbLike)
-		div.appendChild(heart)
+		div.appendChild(h2)
+		div.appendChild(like)
+		like.appendChild(nbLike)
+		like.appendChild(heart)
 
 		return article		
 
 	}
 
-	return { title, photographerId, image, likes, date, price, id, name, getPhotos }
+	return { title, photographerId, image, likes, date, price, id, getPhotos }
 }

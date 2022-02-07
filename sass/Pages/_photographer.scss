@@ -11,6 +11,7 @@
     align-items: center;
 
     img {
+        order: 3;
         height: 200px;
         width: 200px;
         border-radius: 50%;
@@ -18,22 +19,28 @@
         object-fit: cover;
     
     }
-    h2 {
-        color: $secondary;
-        font-size: 46px;
-        text-decoration: none;
+    .info{
+        order: 1;
+
+        .name {
+            color: $secondary;
+            font-size: 46px;
+            text-decoration: none;
+        }
+        .location {
+            color: $primary;
+            font-size: 22px;
+        }
+        .tagline {
+            font-size: 20px;
+            color: $grey;
+        }
     }
-    .location {
-        color: $primary;
-        font-size: 22px;
-    }
-    .tagline {
-        font-size: 20px;
-        color: $grey;
-    }
+ 
 }
 
 .contact_button {
+    order: 2;
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -44,6 +51,11 @@
     background-color: $primary;
     border-radius: 5px;
     cursor: pointer;
+
+    &:hover, &:focus {
+        color: black;
+        background-color: $secondary;
+    }
 }
 
 .modal {
@@ -70,32 +82,34 @@
             text-align: center;
         }
     }
-}
 
-form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-
-    label {
-        color: #312E2E;
-        font-size: 36px;
-    }
-    div {
+    form {
         display: flex;
+        width: 100%;
         flex-direction: column;
-        width: 100%;
-        align-items: self-start;
-        margin-bottom: 26px;
-    }
-    input {
-        width: 100%;
-        height: 68px;
-        border: none;
-        border-radius: 5px;
+        align-items: flex-start;
+    
+        label {
+            color: #312E2E;
+            font-size: 36px;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: self-start;
+            margin-bottom: 26px;
+        }
+        input {
+            width: 100%;
+            height: 68px;
+            border: none;
+            border-radius: 5px;
+        }
     }
 }
+
+
 
 
 .photo_section{
@@ -136,9 +150,49 @@ form {
     gap: 70px;
     margin-top: 50px;
 
+    article{
+        height: 40vh;
+        width: 20vw;
+        border-radius: 5px;
+        // overflow: hidden;
+    }
+
     img {
-        height: 350px;
-        width: 350px;
+        height: 90%;
+        width: 100%;
         object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .card-info{
+        display: flex;
+        justify-content: space-between;
+
+        h2{
+            color: $primary;
+            font-weight: 500;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        span{
+            align-self: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: $primary;
+            margin: 3px;
+        }
+
+        .fas {
+            font-size: 18px;
+            align-self: center;
+            margin: 3px;
+            color: $primary;
+        }
+
+        .like{
+            display: flex;
+        }
     }
 }
