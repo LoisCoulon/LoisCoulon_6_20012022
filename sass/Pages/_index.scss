@@ -1,0 +1,44 @@
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
+
+.photographer_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-top: 100px;
+
+    article {
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+            color: $secondary;
+            font-size: 36px;
+            text-decoration: none;
+        }
+        img {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+        
+        }
+        .location {
+            color: $primary;
+            font-size: 13px;
+        }
+        .tagline {
+            font-size: 12px;
+        }
+        .price {
+            font-size: 12px;
+            color: $grey;
+        }
+    }
+}
