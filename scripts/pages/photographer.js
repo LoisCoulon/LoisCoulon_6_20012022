@@ -1,45 +1,3 @@
-// // Récupération des données du fichier photographers.json
-// async function getPhotographer() {
-// 	return fetch("./data/photographers.json")
-// 		.then(function (response) {
-// 			return response.json()
-// 		})
-// 		.then(function (data) {
-// 			return data
-// 		})
-// 		.catch(function (err) {
-// 			console.log(err)
-// 		})
-// }
-  
-// // display the photographer infos
-// async function displayPhotographer(photographer) {
-// 	const cards = document.querySelector(".cards")
-
-// 	const photographerModel = photographerFactory(photographer)
-// 	const photographerDOM = photographerModel.getPhotographerDOM()
-// 	cards.appendChild(photographerDOM)
-// }
-
-// //display the photos 
-// async function displayMedia(media) {
-// 	const cards = document.querySelector(".cards")
-
-// 	media.foreach((photo) => {
-// 		const mediaModel = photoFactory(photo)
-// 		const photoDOM = mediaModel.getPhotos()
-// 		cards.appendChild(photoDOM)
-// 	})
-// }
-
-
-// async function init() {
-// 	const { photographerData } = await getPhotographer()
-// 	displayPhotographer(photographerData)
-// 	displayMedia(photographerData)
-// }
-// init()
-
 // Récupération des données du fichier photographers.json
 async function getMedia() {
 	return fetch("./data/photographers.json")
@@ -47,7 +5,6 @@ async function getMedia() {
 			return response.json()
 		})
 		.then(function (data) {
-			console.log(data)
 			return data
 		})
 		.catch(function (err) {
@@ -61,6 +18,18 @@ function getUrlId() {
 	const urlParams = new URLSearchParams(queryString);
 	const urlId = urlParams.get('id');
 	return urlId
+}
+
+// display the photographer infos
+async function displayPhotographer(photographers) {
+	const photoHeader = document.querySelector(".photograph-header")
+
+	photographers.forEach((photographer) => {
+		const photographerModel = photographerFactory(photographer)
+		const photographerDOM = photographerModel.getPhotographerDOM()
+		photoHeader.appendChild(photographerDOM)
+	})
+	
 }
 
 
@@ -77,8 +46,10 @@ async function displayMedia(medias) {
 async function init() {
 	// Récupère les datas des photographes
 	const { media } = await getMedia()
+	const {photographers} = await getMedia()
 
 	displayMedia(media) 
+	displayPhotographer(photographers)
 }
 
 init()
