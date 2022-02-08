@@ -229,4 +229,35 @@ h1 {
   display: flex;
 }
 
+.insert {
+  width: 300px;
+  height: 70px;
+  background-color: #D3573C;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.insert .total-likes {
+  display: flex;
+  margin: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  align-items: center;
+}
+.insert .total-likes p {
+  margin: 3px;
+}
+.insert .total-likes .fas {
+  margin: 3px;
+}
+.insert .price {
+  margin: 5px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 /*# sourceMappingURL=style.css.map */

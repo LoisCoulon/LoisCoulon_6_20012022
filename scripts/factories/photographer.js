@@ -45,6 +45,7 @@ function photographerFactory(data) {
 		const location = document.createElement("p")
 		const pTagline = document.createElement("p")
 		const alt = "photo de profil de " + name
+		const pPrice = document.createElement("p")
 
 		img.setAttribute("src", picture)
 		img.setAttribute("alt", alt)
@@ -52,16 +53,18 @@ function photographerFactory(data) {
 		location.setAttribute("class", "location")
 		pTagline.setAttribute("class", "tagline")
 		h1.setAttribute("class", "name")
+		pPrice.setAttribute("class", "price")
 
 		h1.textContent = name
 		location.textContent = city + ", " + country
 		pTagline.textContent = tagline
+		pPrice.textContent = price + "€/jour"
 
 		info.appendChild(h1)
 		info.appendChild(location)
 		info.appendChild(pTagline)
 
-		return {info, img}
+		return {info, img, pPrice}
 
 	}	
 

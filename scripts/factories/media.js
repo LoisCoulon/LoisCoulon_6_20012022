@@ -10,6 +10,8 @@ function photoFactory(data) {
 		const nbLike = document.createElement('span')
 		const heart = document.createElement('i')
 		const like = document.createElement("div")
+		const insertLike = document.createElement("p")
+
 
 		let name = ""
 		if(photographerId === 82) {
@@ -33,6 +35,7 @@ function photoFactory(data) {
 		heart.setAttribute("class", "fas fa-heart")
 		div.setAttribute("class", "card-info")
 		like.setAttribute("class", "like")
+		nbLike.setAttribute("class", "nb-like")
 
 
 		h2.textContent = title
@@ -45,7 +48,7 @@ function photoFactory(data) {
 		like.appendChild(nbLike)
 		like.appendChild(heart)
 
-		return article		
+		return article 
 
 	}
 

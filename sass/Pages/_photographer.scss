@@ -196,3 +196,37 @@
         }
     }
 }
+
+.insert{
+    width: 300px;
+    height: 70px;
+    background-color: $secondary;
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .total-likes{
+        display: flex;
+        margin: 5px;
+        font-size: 24px;
+        font-weight: 600;
+        align-items: center;
+
+        p{
+            margin: 3px;
+        }
+        .fas{
+            margin: 3px;
+        }
+    }
+
+    .price{
+        margin: 5px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
