@@ -201,6 +201,12 @@ h1 {
   object-fit: cover;
   border-radius: 5px;
 }
+.cards video {
+  height: 90%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
 .cards .card-info {
   display: flex;
   justify-content: space-between;

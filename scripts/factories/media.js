@@ -4,14 +4,11 @@ function photoFactory(data) {
 	function getPhotos() {
 
 		const article = document.createElement('article')
-		const img = document.createElement('img')
 		const h2 = document.createElement('h2')
 		const div = document.createElement('div')
 		const nbLike = document.createElement('span')
 		const heart = document.createElement('i')
 		const like = document.createElement("div")
-		const insertLike = document.createElement("p")
-
 
 		let name = ""
 		if(photographerId === 82) {
@@ -30,8 +27,18 @@ function photoFactory(data) {
 	
 		const picture = `assets/images/${name}/${image ? image : video}`
 
-		img.setAttribute("src", picture)
-		img.setAttribute("alt", title)
+		if (image) {
+			const img = document.createElement('img')
+			img.setAttribute("src", picture)
+			img.setAttribute("alt", title)
+			article.appendChild(img)
+		} else {
+			const vid = document.createElement('video')
+			vid.setAttribute("src", picture)
+			vid.setAttribute("alt", title)
+			article.appendChild(vid)
+		}
+		
 		heart.setAttribute("class", "fas fa-heart")
 		div.setAttribute("class", "card-info")
 		like.setAttribute("class", "like")
@@ -41,7 +48,6 @@ function photoFactory(data) {
 		h2.textContent = title
 		nbLike.textContent = likes
 
-		article.appendChild(img)
 		article.appendChild(div)
 		div.appendChild(h2)
 		div.appendChild(like)
