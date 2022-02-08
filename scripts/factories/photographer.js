@@ -41,7 +41,7 @@ function photographerFactory(data) {
 
 		const info = document.createElement( "div" )
 		const img = document.createElement( "img" )
-		const h2 = document.createElement( "h2" )
+		const h1 = document.createElement( "h1" )
 		const location = document.createElement("p")
 		const pTagline = document.createElement("p")
 		const alt = "photo de profil de " + name
@@ -51,16 +51,17 @@ function photographerFactory(data) {
 		info.setAttribute("class", "info")
 		location.setAttribute("class", "location")
 		pTagline.setAttribute("class", "tagline")
+		h1.setAttribute("class", "name")
 
-		h2.textContent = name
+		h1.textContent = name
 		location.textContent = city + ", " + country
 		pTagline.textContent = tagline
 
-		info.appendChild(h2)
+		info.appendChild(h1)
 		info.appendChild(location)
 		info.appendChild(pTagline)
 
-		return (info, img)
+		return {info, img}
 
 	}	
 
