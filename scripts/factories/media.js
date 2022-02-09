@@ -34,8 +34,17 @@ function photoFactory(data) {
 			article.appendChild(img)
 		} else {
 			const vid = document.createElement('video')
-			vid.setAttribute("src", picture)
+			const track = document.createElement('track')
+			const source = document.createElement('source')
+			// vid.setAttribute("src", picture)
 			vid.setAttribute("alt", title)
+			vid.setAttribute("controls", "controls")
+			source.setAttribute("src", picture)
+			source.setAttribute("type", "video/mp4")
+			track.setAttribute("kind", "subtitles")
+			track.setAttribute("src", "")
+			vid.appendChild(track)
+			vid.appendChild(source)
 			article.appendChild(vid)
 		}
 		
