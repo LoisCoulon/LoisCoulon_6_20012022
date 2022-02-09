@@ -38,18 +38,30 @@
         </div>
       </div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <h2 id="modalTitle">Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form id="form" name="contact">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="firstName">Prénom</label>
+						<input type="text" name="firstName" id="firstName"/>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <div>
+						<label for="lastName">Nom</label>
+						<input type="text" name="lastName" id="lastName" />
+					</div>
+          <div>
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email"/>
+					</div>
+          <div>
+						<label for="message">Votre message</label>
+						<textarea rows="5" name="message" id="message"></textarea>
+					</div>
+          <button id="btn" class="contact_button" onclick="getForm">Envoyer</button>
 				</form>
 			</div>
 		</div>

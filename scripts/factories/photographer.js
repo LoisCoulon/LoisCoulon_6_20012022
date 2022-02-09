@@ -46,6 +46,7 @@ function photographerFactory(data) {
 		const pTagline = document.createElement("p")
 		const alt = "photo de profil de " + name
 		const pPrice = document.createElement("p")
+		const contactName = name
 
 		img.setAttribute("src", picture)
 		img.setAttribute("alt", alt)
@@ -64,7 +65,7 @@ function photographerFactory(data) {
 		info.appendChild(location)
 		info.appendChild(pTagline)
 
-		return {info, img, pPrice}
+		return {info, img, pPrice, contactName}
 
 	}	
 
