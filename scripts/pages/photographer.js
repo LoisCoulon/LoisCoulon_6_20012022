@@ -77,6 +77,13 @@ async function init() {
   displayMedia(media);
   displayPhotographer(photographers);
   displaySumOfLikes(media)
+
+  let lightbox = new Lightbox(media)
+  document.querySelectorAll(".cards .media").forEach(media => {
+    media.addEventListener("click", (e) => {
+      lightbox.show(e.currentTarget.dataset.id)
+    })
+  })
 }
 
 init();

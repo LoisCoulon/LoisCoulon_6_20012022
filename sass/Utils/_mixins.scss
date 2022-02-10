@@ -1,0 +1,13 @@
+@mixin arrow {
+    cursor: pointer;
+    height: 30px;
+    padding: 10px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color: $light;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid $light;
+}

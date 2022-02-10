@@ -282,4 +282,73 @@ main {
   font-weight: 600;
 }
 
+#lightbox {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #808080ad;
+  top: 0;
+  display: none;
+}
+#lightbox.show {
+  display: flex;
+}
+#lightbox .content {
+  height: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  background-color: #D3573C;
+  border-radius: 10px;
+  position: relative;
+}
+#lightbox .content .picture {
+  height: 100%;
+  width: 500px;
+  object-fit: contain;
+}
+#lightbox .content .movie {
+  display: none;
+  height: 100%;
+  width: 500px;
+  object-fit: contain;
+}
+#lightbox .content .close {
+  position: absolute;
+  right: 0;
+  order: 4;
+  z-index: 1;
+  margin: 10px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+#lightbox .content .next {
+  cursor: pointer;
+  height: 30px;
+  padding: 10px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  color: #fafafa;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #fafafa;
+  border: 2px solid white;
+}
+#lightbox .content .previous {
+  cursor: pointer;
+  height: 30px;
+  padding: 10px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  color: #fafafa;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #fafafa;
+}
+
 /*# sourceMappingURL=style.css.map */

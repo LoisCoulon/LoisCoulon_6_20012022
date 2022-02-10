@@ -52,6 +52,8 @@ function photoFactory(data) {
 		div.setAttribute("class", "card-info")
 		like.setAttribute("class", "like")
 		nbLike.setAttribute("class", "nb-like")
+		article.setAttribute("data-id", id)
+		article.setAttribute("class", "media")
 
 
 		h2.textContent = title

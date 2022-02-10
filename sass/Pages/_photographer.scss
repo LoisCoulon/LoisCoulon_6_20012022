@@ -251,3 +251,58 @@ main{
         font-weight: 600;
     }
 }
+
+#lightbox {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #808080ad;
+    top: 0;
+    display: none;
+
+    &.show{
+        display: flex;
+    }
+
+    .content {
+        height: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        background-color: $secondary;
+        border-radius: 10px;
+        position: relative;
+
+        .picture{
+            height: 100%;
+            width: 500px;
+            object-fit: contain;
+        }
+        .movie{
+            display: none;
+            height: 100%;
+            width: 500px;
+            object-fit: contain;
+        }
+        .close{
+            position: absolute;
+            right: 0;
+            order: 4;
+            z-index: 1;
+            margin: 10px;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+        }
+        .next{
+            @include arrow;
+            border: 2px solid white;
+        }
+        .previous{
+            @include arrow
+        }
+    }
+}
+
+
+ 

@@ -7,7 +7,7 @@ function displayModal() {
 	modal.style.display = "block"
 	modal.setAttribute("aria-hidden" , "false")
 	main.setAttribute("aria-hidden", "true")
-	main.style.opacity = "10%"
+	main.style.opacity = "30%"
 }
 
 //Ferme le formulaire de contact
@@ -38,10 +38,11 @@ function getForm() {
 	console.log(data)
 }
 
-
+const form = document.getElementById('form')
 const btn = document.getElementById('btn')
 btn.addEventListener('click', function(e) {
 	e.preventDefault()
 	getForm()
 	closeModal()
+	form.reset()
 })
