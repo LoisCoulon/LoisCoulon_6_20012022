@@ -265,41 +265,42 @@ main{
     }
 
     .content {
-        height: 600px;
+        height: 90%;
         margin: auto;
         display: flex;
         flex-direction: row;
-        background-color: $secondary;
+        background-color: $light;
         border-radius: 10px;
         position: relative;
 
         .picture{
-            height: 100%;
-            width: 500px;
-            object-fit: contain;
+            @include media;
         }
         .movie{
-            display: none;
-            height: 100%;
-            width: 500px;
-            object-fit: contain;
+            @include media;
         }
         .close{
             position: absolute;
             right: 0;
-            order: 4;
-            z-index: 1;
-            margin: 10px;
+            margin: 0 10px;
             cursor: pointer;
-            width: 20px;
-            height: 20px;
+            font-size: 30px;
+            color: $primary;
+            font-weight: 600;
+            height: auto
         }
         .next{
             @include arrow;
-            border: 2px solid white;
         }
         .previous{
             @include arrow
+        }
+        .title{
+            color: $primary;
+            position: absolute;
+            bottom: 0;
+            margin: 10px 10%;
+            font-weight: 500;
         }
     }
 }

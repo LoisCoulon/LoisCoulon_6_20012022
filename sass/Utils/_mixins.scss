@@ -5,9 +5,17 @@
     align-self: center;
     display: flex;
     align-items: center;
-    font-size: 40px;
-    color: $light;
+    font-size: 50px;
+    font-weight: 800;
+    color: $primary;
     background-color: transparent;
     border-radius: 5px;
-    border: 2px solid $light;
+    border: none;
+}
+
+@mixin media {
+    height: 85%;
+    width: 500px;
+    object-fit: contain;
+    align-self: center;
 }
