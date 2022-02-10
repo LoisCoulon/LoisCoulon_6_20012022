@@ -294,25 +294,29 @@ main {
   display: flex;
 }
 #lightbox .content {
-  height: 90%;
+  height: 95%;
+  width: 60%;
   margin: auto;
   display: flex;
   flex-direction: row;
   background-color: #fafafa;
   border-radius: 10px;
   position: relative;
+  justify-content: space-between;
 }
 #lightbox .content .picture {
-  height: 85%;
-  width: 500px;
-  object-fit: contain;
+  height: 90%;
+  width: 80%;
+  object-fit: cover;
   align-self: center;
+  border-radius: 5px;
 }
 #lightbox .content .movie {
-  height: 85%;
-  width: 500px;
-  object-fit: contain;
+  height: 90%;
+  width: 80%;
+  object-fit: cover;
   align-self: center;
+  border-radius: 5px;
 }
 #lightbox .content .close {
   position: absolute;

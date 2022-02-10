@@ -265,13 +265,15 @@ main{
     }
 
     .content {
-        height: 90%;
+        height: 95%;
+        width: 60%;
         margin: auto;
         display: flex;
         flex-direction: row;
         background-color: $light;
         border-radius: 10px;
         position: relative;
+        justify-content: space-between;
 
         .picture{
             @include media;

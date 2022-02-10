@@ -14,8 +14,9 @@
 }
 
 @mixin media {
-    height: 85%;
-    width: 500px;
-    object-fit: contain;
+    height: 90%;
+    width: 80%;
+    object-fit: cover;
     align-self: center;
+    border-radius: 5px;
 }
