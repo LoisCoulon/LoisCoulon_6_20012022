@@ -42,7 +42,6 @@ class Lightbox {
         }
 
         let index = list.findIndex(element => element.id == this.currentElement.id)
-        console.log(index)
         if (index == 0) {
             this.currentElement = list[list.length - 1]
         } else {
@@ -115,10 +114,12 @@ class Lightbox {
             image.style.display = "block"
             movie.style.display = "none"
             image.src = "assets/images/" + name + this.currentElement.image
+            image.alt = this.currentElement.title
         } else {
             image.style.display = "none"
             movie.style.display = "block"
             movie.src = "assets/images/" + name + this.currentElement.video
+            movie.ariaLabel = this.currentElement.title
         }
         document.querySelector('#lightbox').classList.add("show")
 
