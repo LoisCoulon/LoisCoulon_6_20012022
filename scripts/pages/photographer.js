@@ -80,18 +80,18 @@ function displayLightbox(media) {
 }
 
 function updateLike(action) {
-  const nbLike = document.querySelector(".like .nb-like")
-  let count = Number(nbLike.textContent)
+  const totalLike = document.querySelector(".total-likes p")
+  let totalCount = Number(totalLike.textContent)
 
   if (action === 'INC') {
-      count += 1
+      totalCount += 1
   } else if (action === 'DEC') {
-      count -=1
+      totalCount -=1
   } else {
       throw "Unknow action"
   }
 
-  return nbLike.textContent = count
+  return totalLike.textContent = totalCount
 
 }
 
