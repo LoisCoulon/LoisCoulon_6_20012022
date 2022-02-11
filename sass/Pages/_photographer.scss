@@ -209,6 +209,16 @@ main{
             font-size: 18px;
             align-self: center;
             margin: 3px;
+            color:#DB8876;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+                color: $primary;
+            }
+        }
+
+        .liked{
+            transform: scale(1.1);
             color: $primary;
         }
 
@@ -242,6 +252,8 @@ main{
         }
         .fas{
             margin: 3px;
+
+           
         }
     }
 
@@ -286,7 +298,7 @@ main{
             right: 0;
             margin: 0 10px;
             cursor: pointer;
-            font-size: 30px;
+            font-size: 40px;
             color: $primary;
             font-weight: 600;
             height: auto

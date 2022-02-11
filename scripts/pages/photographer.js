@@ -68,6 +68,48 @@ async function displayMedia(medias) {
 
 }
 
+function displayLightbox(media) {
+
+  let lightbox = new Lightbox(media)
+  document.querySelectorAll(".cards .media .media-content").forEach(media => {
+    media.addEventListener("click", (e) => {
+      lightbox.show(e.currentTarget.dataset.id)
+    })
+  })
+
+}
+
+function updateLike(action) {
+  const nbLike = document.querySelector(".like .nb-like")
+  let count = Number(nbLike.textContent)
+
+  if (action === 'INC') {
+      count += 1
+  } else if (action === 'DEC') {
+      count -=1
+  } else {
+      throw "Unknow action"
+  }
+
+  return nbLike.textContent = count
+
+}
+
+function likeButton() {
+  const hearts = document.querySelectorAll(".like .fas")
+
+  hearts.forEach(heart => {
+    heart.addEventListener("click", function() {
+      if (heart.classList.contains("liked")) {
+        heart.classList.remove("liked")
+        updateLike("DEC")
+      } else {
+        heart.classList.add("liked")
+        updateLike("INC")
+      }
+    })
+  });  
+}
 
 
 async function init() {
@@ -77,13 +119,9 @@ async function init() {
   displayMedia(media);
   displayPhotographer(photographers);
   displaySumOfLikes(media)
-
-  let lightbox = new Lightbox(media)
-  document.querySelectorAll(".cards .media").forEach(media => {
-    media.addEventListener("click", (e) => {
-      lightbox.show(e.currentTarget.dataset.id)
-    })
-  })
+  displayLightbox(media)
+  likeButton()
+  
 }
 
 init();
