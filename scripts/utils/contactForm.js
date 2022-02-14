@@ -24,6 +24,12 @@ modal.addEventListener("keyup", (e) => {
 	}
 })
 
+modal.addEventListener("click", (e) => {
+	if(e.target === e.currentTarget) {
+		closeModal()
+	}
+})
+
 function getForm() {
 	let firstName = document.getElementById('firstName')
 	let lastName = document.getElementById('lastName')
