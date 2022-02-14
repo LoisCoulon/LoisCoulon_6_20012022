@@ -79,33 +79,27 @@ function displayLightbox(media) {
 
 }
 
-function updateLike(action) {
+function likeButton() {
+  const hearts = document.querySelectorAll(".like .fas")
   const totalLike = document.querySelector(".total-likes p")
   let totalCount = Number(totalLike.textContent)
 
-  if (action === 'INC') {
-      totalCount += 1
-  } else if (action === 'DEC') {
-      totalCount -=1
-  } else {
-      throw "Unknow action"
-  }
-
-  return totalLike.textContent = totalCount
-
-}
-
-function likeButton() {
-  const hearts = document.querySelectorAll(".like .fas")
-
   hearts.forEach(heart => {
+
     heart.addEventListener("click", function() {
+      const like = heart.previousSibling
+      let countLike = Number(like.textContent)
+
       if (heart.classList.contains("liked")) {
         heart.classList.remove("liked")
-        updateLike("DEC")
+        countLike -= 1
+        totalCount -=1
+        return totalLike.textContent = totalCount, like.textContent = countLike
       } else {
         heart.classList.add("liked")
-        updateLike("INC")
+        countLike += 1
+        totalCount +=1    
+        return totalLike.textContent = totalCount, like.textContent = countLike  
       }
     })
   });  
