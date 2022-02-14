@@ -12,12 +12,12 @@
   <body>
     <header>
       <a href="./index.html">
-        <img src="assets/images/logo.png" class="logo" alt="logo"/>
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
       </a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" aria-label="Contact Me" onclick="displayModal()">Contactez-moi</button>
       </div>
       <section class="photo_section">
         <div class="filters">
@@ -42,7 +42,7 @@
 			<div class="modal">
 				<header>
           <h2 id="modalTitle">Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" alt="Close Contact form" onclick="closeModal()" />
         </header>
 				<form id="form" name="contact">
 					<div>
@@ -61,17 +61,17 @@
 						<label for="message">Votre message</label>
 						<textarea rows="5" name="message" id="message"></textarea>
 					</div>
-          <button id="btn" class="contact_button" onclick="getForm">Envoyer</button>
+          <button id="btn" class="contact_button" aria-label="Send" onclick="getForm">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <div id="lightbox" aria-label="Liste des images">
-      <div class="content">
-        <div class="close">x</div>
-        <button class="previous">&lt</button>
+    <div id="lightbox" >
+      <div class="content" aria-label="Image closeup view">
+        <div class="close" aria-label="close dialog">x</div>
+        <button class="previous" aria-label="previous image">&lt</button>
         <img class="picture">
         <video class="movie"></video>
-        <button class="next">&gt</button>
+        <button class="next" aria-label="next image">&gt</button>
         <h2 class="title"></h2>
       </div>
     </div>

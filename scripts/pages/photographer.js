@@ -39,6 +39,7 @@ async function displayPhotographer(photographers) {
   const photoHeader = document.querySelector(".photograph-header");
   const insert = document.querySelector(".insert")
   const contact = document.getElementById("modalTitle")
+  const modal = document.querySelector(".modal")
 
   const id = getUrlId();
   const photographer = photographers.find(
@@ -50,6 +51,8 @@ async function displayPhotographer(photographers) {
     photoHeader.appendChild(info);
     photoHeader.appendChild(img);
     insert.appendChild(pPrice)
+    modal.setAttribute("aria-label", "Contact Me " + contactName)
+    modal.setAttribute("aria-labelledby", "modalTitle")
     contact.innerHTML = "Contactez-moi <br />" + contactName
   }
 }

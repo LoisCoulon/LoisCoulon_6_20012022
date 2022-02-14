@@ -11,7 +11,7 @@ function photographerFactory(data) {
 		const pTagline = document.createElement("p")
 		const pPrice = document.createElement("p")
 		const a = document.createElement("a")
-		const alt = "photo de profil de " + name
+		const alt = name
 
 		img.setAttribute("src", picture)
 		img.setAttribute("alt", alt)
@@ -26,10 +26,9 @@ function photographerFactory(data) {
 		pTagline.textContent = tagline
 		pPrice.textContent = price + "€/jour"
 
-		article.appendChild(img)
 		article.appendChild(a)
 		a.appendChild(img)
-		article.appendChild(h2)
+		a.appendChild(h2)
 		article.appendChild(location)
 		article.appendChild(pTagline)
 		article.appendChild(pPrice)
@@ -44,7 +43,7 @@ function photographerFactory(data) {
 		const h1 = document.createElement( "h1" )
 		const location = document.createElement("p")
 		const pTagline = document.createElement("p")
-		const alt = "photo de profil de " + name
+		const alt = name
 		const pPrice = document.createElement("p")
 		const contactName = name
 

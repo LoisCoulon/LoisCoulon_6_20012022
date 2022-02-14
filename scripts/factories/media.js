@@ -56,7 +56,7 @@ function photoFactory(data) {
 		like.setAttribute("class", "like")
 		nbLike.setAttribute("class", "nb-like")
 		article.setAttribute("class", "media")
-
+		like.setAttribute("aria-label", "likes")
 
 		h2.textContent = title
 		nbLike.textContent = likes
