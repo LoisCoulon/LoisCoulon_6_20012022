@@ -144,10 +144,10 @@ function onChangeFilter(medias) {
         const sortByLikes = Object.values(medias).sort(function(a, b) {
           let nameA = a.likes
           let nameB = b.likes
-          if (nameA < nameB) {
+          if (nameA > nameB) {
             return -1; 
           }
-          if (nameA > nameB) {
+          if (nameA < nameB) {
             return 1; 
           }
           return 0; 
