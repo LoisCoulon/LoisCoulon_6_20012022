@@ -38,7 +38,7 @@
         </div>
       </div>
     </main>
-    <div id="contact_modal" class="contact_modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle">
+    <div id="contact_modal" class="contact_modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
 			<div class="modal">
 				<header>
           <h2 id="modalTitle">Contactez-moi</h2>
@@ -46,20 +46,20 @@
         </header>
 				<form id="form" name="contact">
 					<div>
-						<label for="firstName">Prénom</label>
-						<input type="text" name="firstName" id="firstName"/>
+						<label id="firstName" for="firstName">Prénom</label>
+						<input aria-labelledby="firstName" type="text" name="firstName" id="firstName"/>
 					</div>
           <div>
-						<label for="lastName">Nom</label>
-						<input type="text" name="lastName" id="lastName" />
+						<label id="lastName" for="lastName">Nom</label>
+						<input aria-labelledby="lastName" type="text" name="lastName" id="lastName" />
 					</div>
           <div>
-						<label for="email">Email</label>
-						<input type="email" name="email" id="email"/>
+						<label id="email" for="email">Email</label>
+						<input aria-labelledby="email" type="email" name="email" id="email"/>
 					</div>
           <div>
-						<label for="message">Votre message</label>
-						<textarea rows="5" name="message" id="message"></textarea>
+						<label id="YourMessage" for="message">Votre message</label>
+						<textarea aria-labelledby="YourMessage" rows="5" name="message" id="message"></textarea>
 					</div>
           <button id="btn" class="contact_button" aria-label="Send" onclick="getForm">Envoyer</button>
 				</form>

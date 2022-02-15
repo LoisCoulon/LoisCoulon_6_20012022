@@ -325,7 +325,7 @@ main {
   height: 90%;
   width: 80%;
   object-fit: contain;
-  background-color: black;
+  background-color: #fafafa;
   align-self: center;
   border-radius: 5px;
 }
@@ -333,7 +333,7 @@ main {
   height: 90%;
   width: 80%;
   object-fit: contain;
-  background-color: black;
+  background-color: #fafafa;
   align-self: center;
   border-radius: 5px;
 }

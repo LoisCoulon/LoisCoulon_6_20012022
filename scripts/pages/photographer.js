@@ -61,6 +61,7 @@ async function displayMedia(medias) {
   const cards = document.querySelector(".cards");
   const id = getUrlId();
 
+  // medias.sort(media => media.title ).forEach((media) => {
   medias.forEach((media) => {
     if (media.photographerId === id) {
       const photographerModel = photoFactory(media);
@@ -97,12 +98,14 @@ function likeButton() {
         heart.classList.remove("liked")
         countLike -= 1
         totalCount -=1
-        return totalLike.textContent = totalCount, like.textContent = countLike
+        totalLike.textContent = totalCount
+        like.textContent = countLike
       } else {
         heart.classList.add("liked")
         countLike += 1
         totalCount +=1    
-        return totalLike.textContent = totalCount, like.textContent = countLike  
+        totalLike.textContent = totalCount
+        like.textContent = countLike  
       }
     })
   });  
