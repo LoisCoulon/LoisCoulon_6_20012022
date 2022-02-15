@@ -39,7 +39,6 @@ function photoFactory(data) {
 			const track = document.createElement('track')
 			const source = document.createElement('source')
 			vid.setAttribute("alt", title)
-			vid.setAttribute("controls", "controls")
 			vid.setAttribute("class", "media-content")
 			source.setAttribute("src", picture)
 			source.setAttribute("type", "video/mp4")

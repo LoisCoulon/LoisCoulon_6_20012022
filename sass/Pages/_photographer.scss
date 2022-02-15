@@ -133,7 +133,7 @@ main{
 .photo_section{
     margin: 50px 100px;
 
-    .filters{
+    .filter-form{
 
         label{
             font-size: 18px;
@@ -294,6 +294,7 @@ main{
         }
         .movie{
             @include media;
+            background-color: black;
         }
         .close{
             position: absolute;

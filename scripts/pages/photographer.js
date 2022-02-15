@@ -34,7 +34,7 @@ function displaySumOfLikes(medias) {
   totalLikes.textContent = likes
 }
 
-// display the photographer infos
+// Affiche les éléments du photographe
 async function displayPhotographer(photographers) {
   const photoHeader = document.querySelector(".photograph-header");
   const insert = document.querySelector(".insert")
@@ -57,12 +57,12 @@ async function displayPhotographer(photographers) {
   }
 }
 
+// Affiche les éléments de la section media
 async function displayMedia(medias) {
   const cards = document.querySelector(".cards");
   const id = getUrlId();
-
-  // medias.sort(media => media.title ).forEach((media) => {
-  medias.forEach((media) => {
+  onChangeFilter(medias)
+  medias.forEach((media) => {    
     if (media.photographerId === id) {
       const photographerModel = photoFactory(media);
       const photoDOM = photographerModel.getPhotos();
@@ -72,6 +72,7 @@ async function displayMedia(medias) {
 
 }
 
+// Affiche la lightbox
 function displayLightbox(media) {
 
   let lightbox = new Lightbox(media)
@@ -83,6 +84,7 @@ function displayLightbox(media) {
 
 }
 
+// fonction de like/dislike des photos 
 function likeButton() {
   const hearts = document.querySelectorAll(".like .fas")
   const totalLike = document.querySelector(".total-likes p")
@@ -111,6 +113,76 @@ function likeButton() {
   });  
 }
 
+// Fonction de filtrage des photos
+function onChangeFilter(medias) {
+  let form = document.querySelector('.filter-form')
+  form.addEventListener('change', e => {
+      const filter = e.target.value
+      const article = document.querySelectorAll(".media")
+
+      if (filter === "Date") {
+        const sortByDate = Object.values(medias).sort(function(a, b) {
+          let nameA = a.date
+          let nameB = b.date
+          if (nameA < nameB) {
+            return -1; //nameA comes first
+          }
+          if (nameA > nameB) {
+            return 1; // nameB comes first
+          }
+          return 0;  // names must be equal
+        });
+        article.forEach(article => {
+          article.remove()
+        })
+        displayMedia(sortByDate)
+        displaySumOfLikes(sortByDate)
+        displayLightbox(sortByDate)
+        likeButton()  
+
+      } else if (filter === "Popularité") {
+        const sortByLikes = Object.values(medias).sort(function(a, b) {
+          let nameA = a.likes
+          let nameB = b.likes
+          if (nameA < nameB) {
+            return -1; 
+          }
+          if (nameA > nameB) {
+            return 1; 
+          }
+          return 0; 
+        }); 
+        article.forEach(article => {
+          article.remove()
+        })
+        displayMedia(sortByLikes)
+        displaySumOfLikes(sortByLikes)
+        displayLightbox(sortByLikes)
+        likeButton()  
+
+      } else {
+        const sortByTitle = Object.values(medias).sort(function(a, b) {
+          let nameA = a.title
+          let nameB = b.title
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0; 
+        }); 
+        article.forEach(article => {
+          article.remove()
+        })
+        displayMedia(sortByTitle)
+        displaySumOfLikes(sortByTitle)
+        displayLightbox(sortByTitle)
+        likeButton()       
+      }
+  })
+}
+
 
 async function init() {
   // Récupère les datas des photographes
@@ -120,8 +192,7 @@ async function init() {
   displayPhotographer(photographers);
   displaySumOfLikes(media)
   displayLightbox(media)
-  likeButton()
-  
+  likeButton()  
 }
 
 init();

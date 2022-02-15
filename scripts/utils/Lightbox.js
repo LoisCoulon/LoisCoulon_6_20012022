@@ -119,6 +119,7 @@ class Lightbox {
             image.style.display = "none"
             movie.style.display = "block"
             movie.src = "assets/images/" + name + this.currentElement.video
+            movie.setAttribute("controls", "controls")
             movie.ariaLabel = this.currentElement.title
         }
         document.querySelector('#lightbox').classList.add("show")
