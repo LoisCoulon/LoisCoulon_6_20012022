@@ -1,6 +1,6 @@
 // Récupération des données du fichier photographers.json
 async function getPhotographers() {
-	return fetch("./data/photographers.json")
+	return fetch("../data/photographers.json")
 		.then(function (response) {
 			return response.json()
 		})
