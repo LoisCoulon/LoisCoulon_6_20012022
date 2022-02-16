@@ -7,7 +7,7 @@ function photoFactory(data) {  // eslint-disable-line no-unused-vars
 		const h2 = document.createElement('h2')
 		const div = document.createElement('div')
 		const nbLike = document.createElement('span')
-		const heart = document.createElement('i')
+		const heart = document.createElement('em')
 		const like = document.createElement("div")
 
 		let name = ""
