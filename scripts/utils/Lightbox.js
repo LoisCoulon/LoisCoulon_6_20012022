@@ -1,4 +1,4 @@
-class Lightbox {
+class Lightbox {  // eslint-disable-line no-unused-vars
     constructor (listElement) {
         this.currentElement = null;
         this.listElement = listElement
@@ -16,7 +16,7 @@ class Lightbox {
         let list = []
 
         for (let i = 0; i < this.listElement.length; i++) {
-            if (this.listElement[i].photographerId === getUrlId()) {
+            if (this.listElement[i].photographerId === getUrlId()) {  // eslint-disable-line no-undef
                 list.push(this.listElement[i])
             }
         }
@@ -36,7 +36,7 @@ class Lightbox {
         let list = []
 
         for (let i = 0; i < this.listElement.length; i++) {
-            if (this.listElement[i].photographerId === getUrlId()) {
+            if (this.listElement[i].photographerId === getUrlId()) { // eslint-disable-line no-undef
                 list.push(this.listElement[i])
             }
         }

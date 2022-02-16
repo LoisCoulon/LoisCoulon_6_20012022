@@ -1,4 +1,4 @@
-function photographerFactory(data) {
+function photographerFactory(data) {  // eslint-disable-line no-unused-vars
 	const { name, portrait, city, country, tagline, price, id } = data
 	const picture = `assets/photographers/${portrait}`
 	const link = `photographer.html?id=${id}`
@@ -11,7 +11,7 @@ function photographerFactory(data) {
 		const pTagline = document.createElement("p")
 		const pPrice = document.createElement("p")
 		const a = document.createElement("a")
-		const alt = name
+		const alt = "photo de" + name
 
 		img.setAttribute("src", picture)
 		img.setAttribute("alt", alt)

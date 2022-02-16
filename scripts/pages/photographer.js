@@ -46,7 +46,7 @@ async function displayPhotographer(photographers) {
     (photographer) => photographer.id === id
   );
   if (photographer) {
-    const photographerModel = photographerFactory(photographer);
+    const photographerModel = photographerFactory(photographer);  // eslint-disable-line no-undef
     const { info, img, pPrice, contactName } = photographerModel.getPhotographerDOM();
     photoHeader.appendChild(info);
     photoHeader.appendChild(img);
@@ -63,7 +63,7 @@ async function displayMedia(medias) {
   const id = getUrlId();
   medias.forEach((media) => {    
     if (media.photographerId === id) {
-      const photographerModel = photoFactory(media);
+      const photographerModel = photoFactory(media);  // eslint-disable-line no-undef
       const photoDOM = photographerModel.getPhotos();
       cards.appendChild(photoDOM);
     }
@@ -74,7 +74,7 @@ async function displayMedia(medias) {
 // Affiche la lightbox
 function displayLightbox(media) {
 
-  let lightbox = new Lightbox(media)
+  let lightbox = new Lightbox(media)  // eslint-disable-line no-undef
   document.querySelectorAll(".cards .media .media-content").forEach(media => {
     media.addEventListener("click", (e) => {
       lightbox.show(e.currentTarget.dataset.id)

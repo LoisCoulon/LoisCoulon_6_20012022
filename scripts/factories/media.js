@@ -1,4 +1,4 @@
-function photoFactory(data) {
+function photoFactory(data) {  // eslint-disable-line no-unused-vars
 	const { title, photographerId, image, likes, date, price, id, video } = data
 	
 	function getPhotos() {
@@ -55,7 +55,9 @@ function photoFactory(data) {
 		like.setAttribute("class", "like")
 		nbLike.setAttribute("class", "nb-like")
 		article.setAttribute("class", "media")
-		like.setAttribute("aria-label", "likes")
+		nbLike.setAttribute("role", "text")
+		nbLike.setAttribute("aria-label", "nombre de likes")
+		heart.setAttribute("aria-label", "cliquer pour liker la photo")
 
 		h2.textContent = title
 		nbLike.textContent = likes
