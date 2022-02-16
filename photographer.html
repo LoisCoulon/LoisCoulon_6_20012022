@@ -1,36 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+     <!-- fontAwesome -->
+     <script src="https://kit.fontawesome.com/e90458a561.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="./index.html">
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
+      </a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" aria-label="Contact Me" onclick="displayModal()">Contactez-moi</button>
+      </div>
+      <section class="photo_section">
+        <form class="filter-form" action="#" method="POST">
+          <label for="filter">Trier par</label>
+          <select name="filter" id="filter">
+            <option value="" disabled selected></option>
+            <option value="Popularité">Popularité</option>
+            <option value="Date">Date</option>
+            <option value="Titre">Titre</option>
+          </select>
+        </form>
+        <div class="cards" id="cards">
+        </div>
+      </section>
+      <div class="insert">
+        <div class="total-likes">
+          <p></p>
+          <i class="fas fa-heart"></i>
+        </div>
       </div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" class="contact_modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h2 id="modalTitle">Contactez-moi</h2>
+          <img src="assets/icons/close.svg" alt="Close Contact form" onclick="closeModal()" />
         </header>
-				<form>
+				<form id="form" name="contact">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label id="First name" for="firstName">Prénom</label>
+						<input aria-labelledby="First name" type="text" name="firstName" id="firstName"/>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <div>
+						<label id="Last name" for="lastName">Nom</label>
+						<input aria-labelledby="Last name" type="text" name="lastName" id="lastName" />
+					</div>
+          <div>
+						<label id="Email" for="email">Email</label>
+						<input aria-labelledby="Email" type="email" name="email" id="email"/>
+					</div>
+          <div>
+						<label id="Your Message" for="message">Votre message</label>
+						<textarea aria-labelledby="Your Message" rows="5" name="message" id="message"></textarea>
+					</div>
+          <button id="btn" class="contact_button" aria-label="Send" onclick="getForm">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <script src="./scripts/utils/contactForm.js"></script>
+    <div id="lightbox" >
+      <div class="content" aria-label="Image closeup view">
+        <div class="close" aria-label="close dialog">x</div>
+        <button class="previous" aria-label="previous image">&lt</button>
+        <img class="picture">
+        <video class="movie"></video>
+        <button class="next" aria-label="next image">&gt</button>
+        <h2 class="title"></h2>
+      </div>
+    </div>
+    <script type="text/javascript" src="scripts/factories/photographer.js"></script>
+    <script type="text/javascript" src="scripts/factories/media.js"></script>
+    <script type="text/javascript" src="scripts/pages/photographer.js"></script>
+    <script type="text/javascript" src="./scripts/utils/contactForm.js"></script>
+    <script type="text/javascript" src="scripts/utils/Lightbox.js"></script>
   </body>
 </html>
