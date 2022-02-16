@@ -178,9 +178,17 @@ async function init() {
   }
 
   // On récupère les médias à afficher sur la page
+  const filter = document.getElementById("filter")
   for (let index = 0; index < media.length; index++) {
     if(media[index].photographerId === id) {
       newMedias.push(media[index])
+      if(filter.value === "Popularité") {
+        newMedias.sort(sortByLikes)
+      } else if (filter.value === "Date") {
+        newMedias.sort(sortByDate)
+      } else {
+        newMedias.sort(sortByTitle)
+      }
     }
   }
 
