@@ -21,7 +21,7 @@ class Lightbox {
             }
         }
 
-        let index = list.findIndex(element => element.id == this.currentElement.id)
+        let index = list.findIndex(element => element.id === this.currentElement.id)
         if (index == list.length -1) {
             this.currentElement = list[0]
         } else {
@@ -41,7 +41,7 @@ class Lightbox {
             }
         }
 
-        let index = list.findIndex(element => element.id == this.currentElement.id)
+        let index = list.findIndex(element => element.id === this.currentElement.id)
         if (index == 0) {
             this.currentElement = list[list.length - 1]
         } else {

@@ -61,7 +61,6 @@ async function displayPhotographer(photographers) {
 async function displayMedia(medias) {
   const cards = document.querySelector(".cards");
   const id = getUrlId();
-  onChangeFilter(medias)
   medias.forEach((media) => {    
     if (media.photographerId === id) {
       const photographerModel = photoFactory(media);
@@ -113,73 +112,53 @@ function likeButton() {
   });  
 }
 
+// Tri les photos de la date la plus récente à la plus ancienne
+const sortByDate = (a, b) => {
+  let nameA = a.date
+  let nameB = b.date
+  return nameB.localeCompare(nameA)
+};
+
+// Tri les photos de la plus likée à la moins likée
+const sortByLikes = (a, b) => {
+  let nameA = a.likes
+  let nameB = b.likes
+  return nameB - nameA
+}; 
+
+// Tri les photos par ordre alphabétique des titres
+const sortByTitle = (a, b) => {
+  let nameA = a.title
+  let nameB = b.title
+  return nameA.localeCompare(nameB)
+}; 
+
 // Fonction de filtrage des photos
 function onChangeFilter(medias) {
   let form = document.querySelector('.filter-form')
   form.addEventListener('change', e => {
       const filter = e.target.value
       const article = document.querySelectorAll(".media")
+      let sortFunction
 
       if (filter === "Date") {
-        const sortByDate = Object.values(medias).sort(function(a, b) {
-          let nameA = a.date
-          let nameB = b.date
-          if (nameA < nameB) {
-            return -1; //nameA comes first
-          }
-          if (nameA > nameB) {
-            return 1; // nameB comes first
-          }
-          return 0;  // names must be equal
-        });
-        article.forEach(article => {
-          article.remove()
-        })
-        displayMedia(sortByDate)
-        displaySumOfLikes(sortByDate)
-        displayLightbox(sortByDate)
-        likeButton()  
-
+        sortFunction = sortByDate
       } else if (filter === "Popularité") {
-        const sortByLikes = Object.values(medias).sort(function(a, b) {
-          let nameA = a.likes
-          let nameB = b.likes
-          if (nameA > nameB) {
-            return -1; 
-          }
-          if (nameA < nameB) {
-            return 1; 
-          }
-          return 0; 
-        }); 
-        article.forEach(article => {
-          article.remove()
-        })
-        displayMedia(sortByLikes)
-        displaySumOfLikes(sortByLikes)
-        displayLightbox(sortByLikes)
-        likeButton()  
-
+        sortFunction = sortByLikes
       } else {
-        const sortByTitle = Object.values(medias).sort(function(a, b) {
-          let nameA = a.title
-          let nameB = b.title
-          if (nameA < nameB) {
-            return -1;
-          }
-          if (nameA > nameB) {
-            return 1;
-          }
-          return 0; 
-        }); 
-        article.forEach(article => {
-          article.remove()
-        })
-        displayMedia(sortByTitle)
-        displaySumOfLikes(sortByTitle)
-        displayLightbox(sortByTitle)
-        likeButton()       
+        sortFunction = sortByTitle
       }
+
+      const sortedMedia = medias.sort(sortFunction)
+
+      article.forEach(article => {
+        article.remove()
+      })
+
+      displayMedia(sortedMedia)
+      displaySumOfLikes(sortedMedia)
+      displayLightbox(sortedMedia)
+      likeButton()  
   })
 }
 
@@ -187,12 +166,31 @@ function onChangeFilter(medias) {
 async function init() {
   // Récupère les datas des photographes
   const { media, photographers } = await getMedia();
+  const id = getUrlId()
+  const newMedias = []
+  const newPhotographers = []
 
-  displayMedia(media);
-  displayPhotographer(photographers);
-  displaySumOfLikes(media)
-  displayLightbox(media)
+  // On récupère le photographe à afficher sur la page
+  for (let index = 0; index < photographers.length; index++) {
+    if(photographers[index].id === id) {
+      newPhotographers.push(photographers[index])
+    }
+  }
+
+  // On récupère les médias à afficher sur la page
+  for (let index = 0; index < media.length; index++) {
+    if(media[index].photographerId === id) {
+      newMedias.push(media[index])
+    }
+  }
+
+
+  displayMedia(newMedias);
+  displayPhotographer(newPhotographers);
+  displaySumOfLikes(newMedias)
+  displayLightbox(newMedias)
   likeButton()  
+  onChangeFilter(newMedias)
 }
 
 init();
