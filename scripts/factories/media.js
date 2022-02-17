@@ -28,7 +28,7 @@ function photoFactory(data) {  // eslint-disable-line no-unused-vars
 		const picture = `assets/images/${name}/${image ? image : video}`
 
 		if (image) {
-			const img = new Media(
+			const img = new Img(
 				"image",
 				picture,
 				title,
@@ -37,7 +37,7 @@ function photoFactory(data) {  // eslint-disable-line no-unused-vars
 			)
 			article.appendChild(img.element)
 		} else {
-			const vid = new Media(
+			const vid = new Video(
 				"video",
 				picture,
 				title,
