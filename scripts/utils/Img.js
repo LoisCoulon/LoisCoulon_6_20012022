@@ -5,7 +5,7 @@ class Img {
         this.alt = alt
         this.dataId = dataId
         this.classname = classname
-        this.create()
+        this.create(this.element)
     }
     create() {
         this.element = document.createElement('img')
@@ -13,5 +13,6 @@ class Img {
         this.element.setAttribute("alt", this.alt)
         this.element.setAttribute("data-id", this.dataId)
         this.element.setAttribute("class", this.classname)
+        return this.element
     }
  }

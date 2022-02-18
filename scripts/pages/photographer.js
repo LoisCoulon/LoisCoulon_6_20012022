@@ -63,9 +63,9 @@ async function displayMedia(medias) {
   const id = getUrlId();
   medias.forEach((media) => {    
     if (media.photographerId === id) {
-      const photographerModel = photoFactory(media);  // eslint-disable-line no-undef
-      const photoDOM = photographerModel.getPhotos();
-      cards.appendChild(photoDOM);
+      const photographerModel = mediaFactory(media);  // eslint-disable-line no-undef
+      const mediaDOM = photographerModel.getMediaDOM();
+      cards.appendChild(mediaDOM);
     }
   });
 

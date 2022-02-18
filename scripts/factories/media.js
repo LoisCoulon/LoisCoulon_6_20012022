@@ -1,7 +1,7 @@
-function photoFactory(data) {  // eslint-disable-line no-unused-vars
+function mediaFactory(data) {  // eslint-disable-line no-unused-vars
 	const { title, photographerId, image, likes, date, price, id, video } = data
 	
-	function getPhotos() {
+	function getMediaDOM() {
 
 		const article = document.createElement('article')
 		const h2 = document.createElement('h2')
@@ -69,5 +69,5 @@ function photoFactory(data) {  // eslint-disable-line no-unused-vars
 
 	}
 
-	return { title, photographerId, image, likes, date, price, id, getPhotos }
+	return { title, photographerId, image, likes, date, price, id, getMediaDOM }
 }
