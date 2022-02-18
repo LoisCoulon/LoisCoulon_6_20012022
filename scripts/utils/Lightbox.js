@@ -22,7 +22,7 @@ class Lightbox {  // eslint-disable-line no-unused-vars
         }
 
         let index = list.findIndex(element => element.id === this.currentElement.id)
-        if (index == list.length -1) {
+        if (index === list.length -1) {
             this.currentElement = list[0]
         } else {
             this.currentElement = list[index+1]
@@ -42,7 +42,7 @@ class Lightbox {  // eslint-disable-line no-unused-vars
         }
 
         let index = list.findIndex(element => element.id === this.currentElement.id)
-        if (index == 0) {
+        if (index === 0) {
             this.currentElement = list[list.length - 1]
         } else {
             this.currentElement = list[index-1]
