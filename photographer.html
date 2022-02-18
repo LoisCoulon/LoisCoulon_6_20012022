@@ -23,8 +23,7 @@
         <form class="filter-form" action="#" method="POST">
           <label for="filter">Trier par</label>
           <select name="filter" id="filter">
-            <option value="" disabled selected></option>
-            <option value="Popularité">Popularité</option>
+            <option value="Popularité" selected>Popularité</option>
             <option value="Date">Date</option>
             <option value="Titre">Titre</option>
           </select>
@@ -35,7 +34,7 @@
       <div class="insert">
         <div class="total-likes">
           <p></p>
-          <i class="fas fa-heart"></i>
+          <em class="fas fa-heart"></em>
         </div>
       </div>
     </main>
@@ -47,20 +46,20 @@
         </header>
 				<form id="form" name="contact">
 					<div>
-						<label id="First name" for="firstName">Prénom</label>
-						<input aria-labelledby="First name" type="text" name="firstName" id="firstName"/>
+						<label id="first-name" for="firstName">Prénom</label>
+						<input aria-labelledby="first-name" type="text" name="firstName" id="firstName"/>
 					</div>
           <div>
-						<label id="Last name" for="lastName">Nom</label>
-						<input aria-labelledby="Last name" type="text" name="lastName" id="lastName" />
+						<label id="last-name" for="lastName">Nom</label>
+						<input aria-labelledby="last-name" type="text" name="lastName" id="lastName" />
 					</div>
           <div>
-						<label id="Email" for="email">Email</label>
-						<input aria-labelledby="Email" type="email" name="email" id="email"/>
+						<label id="e-mail" for="email">Email</label>
+						<input aria-labelledby="e-mail" type="email" name="email" id="email"/>
 					</div>
           <div>
-						<label id="Your Message" for="message">Votre message</label>
-						<textarea aria-labelledby="Your Message" rows="5" name="message" id="message"></textarea>
+						<label id="YourMessage" for="message">Votre message</label>
+						<textarea aria-labelledby="YourMessage" rows="5" name="message" id="message"></textarea>
 					</div>
           <button id="btn" class="contact_button" aria-label="Send" onclick="getForm">Envoyer</button>
 				</form>
@@ -69,17 +68,20 @@
     <div id="lightbox" >
       <div class="content" aria-label="Image closeup view">
         <div class="close" aria-label="close dialog">x</div>
-        <button class="previous" aria-label="previous image">&lt</button>
-        <img class="picture">
-        <video class="movie"></video>
-        <button class="next" aria-label="next image">&gt</button>
+        <button class="previous" aria-label="previous image">&lt;</button>
+        <img src="#" class="picture" alt="">
+        <video src="#" class="movie"></video>
+        <button class="next" aria-label="next image">&gt;</button>
         <h2 class="title"></h2>
       </div>
     </div>
-    <script type="text/javascript" src="scripts/factories/photographer.js"></script>
-    <script type="text/javascript" src="scripts/factories/media.js"></script>
-    <script type="text/javascript" src="scripts/pages/photographer.js"></script>
-    <script type="text/javascript" src="./scripts/utils/contactForm.js"></script>
-    <script type="text/javascript" src="scripts/utils/Lightbox.js"></script>
+    <script type="text/javascript" src="../scripts/factories/photographer.js"></script>
+    <script type="text/javascript" src="../scripts/factories/media.js"></script>
+    <script type="text/javascript" src="../scripts/pages/photographer.js"></script>
+    <script type="text/javascript" src="../scripts/utils/contactForm.js"></script>
+    <script type="text/javascript" src="../scripts/utils/Lightbox.js"></script>
+    <script type="text/javascript" src="../scripts/utils/Img.js"></script>
+    <script type="text/javascript" src="../scripts/utils/Video.js"></script>
+
   </body>
 </html>

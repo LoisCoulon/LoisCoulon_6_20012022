@@ -1,13 +1,13 @@
-function photoFactory(data) {  // eslint-disable-line no-unused-vars
+function mediaFactory(data) {  // eslint-disable-line no-unused-vars
 	const { title, photographerId, image, likes, date, price, id, video } = data
 	
-	function getPhotos() {
+	function getMediaDOM() {
 
 		const article = document.createElement('article')
 		const h2 = document.createElement('h2')
 		const div = document.createElement('div')
 		const nbLike = document.createElement('span')
-		const heart = document.createElement('i')
+		const heart = document.createElement('em')
 		const like = document.createElement("div")
 
 		let name = ""
@@ -28,26 +28,23 @@ function photoFactory(data) {  // eslint-disable-line no-unused-vars
 		const picture = `assets/images/${name}/${image ? image : video}`
 
 		if (image) {
-			const img = document.createElement('img')
-			img.setAttribute("src", picture)
-			img.setAttribute("alt", title)
-			img.setAttribute("data-id", id)
-			img.setAttribute("class", "media-content")
-			article.appendChild(img)
+			const img = new Img(
+				"image",
+				picture,
+				title,
+				id,
+				"media-content"
+			)
+			article.appendChild(img.element)
 		} else {
-			const vid = document.createElement('video')
-			const track = document.createElement('track')
-			const source = document.createElement('source')
-			vid.setAttribute("alt", title)
-			vid.setAttribute("class", "media-content")
-			source.setAttribute("src", picture)
-			source.setAttribute("type", "video/mp4")
-			track.setAttribute("kind", "subtitles")
-			track.setAttribute("src", "")
-			vid.setAttribute("data-id", id)
-			vid.appendChild(track)
-			vid.appendChild(source)
-			article.appendChild(vid)
+			const vid = new Video(
+				"video",
+				picture,
+				title,
+				id,
+				"media-content"
+			)
+			article.appendChild(vid.element)
 		}
 		
 		heart.setAttribute("class", "fas fa-heart")
@@ -72,5 +69,5 @@ function photoFactory(data) {  // eslint-disable-line no-unused-vars
 
 	}
 
-	return { title, photographerId, image, likes, date, price, id, getPhotos }
+	return { title, photographerId, image, likes, date, price, id, getMediaDOM }
 }

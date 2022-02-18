@@ -1,6 +1,6 @@
 // Récupération des données du fichier photographers.json
 async function getMedia() {
-  return fetch("./data/photographers.json")
+  return fetch("../data/photographers.json")
     .then(function (response) {
       return response.json();
     })
@@ -63,9 +63,9 @@ async function displayMedia(medias) {
   const id = getUrlId();
   medias.forEach((media) => {    
     if (media.photographerId === id) {
-      const photographerModel = photoFactory(media);  // eslint-disable-line no-undef
-      const photoDOM = photographerModel.getPhotos();
-      cards.appendChild(photoDOM);
+      const photographerModel = mediaFactory(media);  // eslint-disable-line no-undef
+      const mediaDOM = photographerModel.getMediaDOM();
+      cards.appendChild(mediaDOM);
     }
   });
 
@@ -178,9 +178,17 @@ async function init() {
   }
 
   // On récupère les médias à afficher sur la page
+  const filter = document.getElementById("filter")
   for (let index = 0; index < media.length; index++) {
     if(media[index].photographerId === id) {
       newMedias.push(media[index])
+      if(filter.value === "Popularité") {
+        newMedias.sort(sortByLikes)
+      } else if (filter.value === "Date") {
+        newMedias.sort(sortByDate)
+      } else {
+        newMedias.sort(sortByTitle)
+      }
     }
   }
 
