@@ -145,8 +145,10 @@ function onChangeFilter(medias) {
         sortFunction = sortByDate
       } else if (filter === "Popularité") {
         sortFunction = sortByLikes
-      } else {
+      } else if (filter === "Titre") {
         sortFunction = sortByTitle
+      } else {
+        console.error()
       }
 
       const sortedMedia = medias.sort(sortFunction)

@@ -11,7 +11,7 @@ function photographerFactory(data) {  // eslint-disable-line no-unused-vars
 		const pTagline = document.createElement("p")
 		const pPrice = document.createElement("p")
 		const a = document.createElement("a")
-		const alt = "photo de" + name
+		const alt = name
 
 		img.setAttribute("src", picture)
 		img.setAttribute("alt", alt)
@@ -20,6 +20,7 @@ function photographerFactory(data) {  // eslint-disable-line no-unused-vars
 		pTagline.setAttribute("class", "tagline")
 		pPrice.setAttribute("class", "price")
 		a.setAttribute("href", link)
+		a.setAttribute("aria-label", name)
 
 		h2.textContent = name
 		location.textContent = city + ", " + country

@@ -42,7 +42,7 @@ h1 {
 }
 .photographer_section .photographer a h2 {
   color: #D3573C;
-  font-size: 36px;
+  font-size: 2.2em;
 }
 .photographer_section .photographer a img {
   height: 200px;
@@ -53,13 +53,13 @@ h1 {
 }
 .photographer_section .photographer .location {
   color: #901C1C;
-  font-size: 13px;
+  font-size: 1em;
 }
 .photographer_section .photographer .tagline {
-  font-size: 12px;
+  font-size: 0.9em;
 }
 .photographer_section .photographer .price {
-  font-size: 12px;
+  font-size: 0.9em;
   color: #525252;
 }
 
@@ -92,22 +92,22 @@ main {
 }
 .photograph-header .info .name {
   color: #D3573C;
-  font-size: 46px;
+  font-size: 3em;
   text-decoration: none;
 }
 .photograph-header .info .location {
   color: #901C1C;
-  font-size: 22px;
+  font-size: 1.5em;
 }
 .photograph-header .info .tagline {
-  font-size: 20px;
+  font-size: 1.2em;
   color: #525252;
   margin-top: 20px;
 }
 
 .contact_button {
   order: 2;
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: bold;
   color: white;
   padding: 11px;
@@ -126,14 +126,14 @@ main {
 .contact_modal {
   width: 100%;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   top: 0;
   background-color: rgba(255, 255, 255, 0.418);
 }
 
 .modal {
   border-radius: 5px;
-  background-color: #DB8876;
+  background-color: #db8876;
   width: 40rem;
   display: flex;
   flex-direction: column;
@@ -163,7 +163,7 @@ main {
   align-items: flex-start;
 }
 .modal form label {
-  color: #312E2E;
+  color: #312e2e;
   font-size: 2rem;
 }
 .modal form div {
@@ -191,16 +191,15 @@ main {
   margin: 50px 100px;
 }
 .photo_section .filter-form label {
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: 600;
 }
 .photo_section .filter-form select {
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: 600;
   color: white;
   padding: 11px;
   width: 170px;
-  /* height: 70px; */
   border: none;
   background-color: #901C1C;
   border-radius: 5px;
@@ -244,16 +243,16 @@ main {
 }
 .cards .card-info span {
   align-self: center;
-  font-size: 18px;
+  font-size: 1.1em;
   font-weight: 600;
   color: #901C1C;
   margin: 3px;
 }
 .cards .card-info .fas {
-  font-size: 18px;
+  font-size: 1.1em;
   align-self: center;
   margin: 3px;
-  color: #DB8876;
+  color: #db8876;
   cursor: pointer;
 }
 .cards .card-info .fas:hover {
@@ -283,7 +282,7 @@ main {
 .insert .total-likes {
   display: flex;
   margin: 5px;
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 600;
   align-items: center;
 }
@@ -295,7 +294,7 @@ main {
 }
 .insert .price {
   margin: 5px;
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 600;
 }
 
@@ -343,7 +342,7 @@ main {
   right: 0;
   margin: 0 10px;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 3.5em;
   color: #901C1C;
   font-weight: 600;
   height: auto;

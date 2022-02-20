@@ -5,7 +5,6 @@ class Img {
         this.alt = alt
         this.dataId = dataId
         this.classname = classname
-        this.create(this.element)
     }
     create() {
         this.element = document.createElement('img')

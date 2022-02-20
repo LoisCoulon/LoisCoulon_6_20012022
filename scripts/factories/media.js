@@ -9,41 +9,28 @@ function mediaFactory(data) {  // eslint-disable-line no-unused-vars
 		const nbLike = document.createElement('span')
 		const heart = document.createElement('em')
 		const like = document.createElement("div")
-
-		let name = ""
-		if(photographerId === 82) {
-			name = "Tracy"
-		} else if (photographerId === 243) {
-			name = "Mimi"
-		} else if (photographerId === 930) {
-			name = "Ellie-Rose"
-		} else if (photographerId === 527) {
-			name = "Nabeel"
-		} else if (photographerId === 925) {
-			name = "Rhode"
-		} else if (photographerId === 195) {
-			name = "Marcel"
-		}
 	
-		const picture = `assets/images/${name}/${image ? image : video}`
+		const picture = `assets/images/${photographerId}/${image ? image : video}`
 
 		if (image) {
-			const img = new Img(
+			const img = new Img( // eslint-disable-line no-undef
 				"image",
 				picture,
 				title,
 				id,
-				"media-content"
+				"media-content",
 			)
+			img.create()
 			article.appendChild(img.element)
 		} else {
-			const vid = new Video(
+			const vid = new Video( // eslint-disable-line no-undef
 				"video",
 				picture,
 				title,
 				id,
 				"media-content"
 			)
+			vid.create()
 			article.appendChild(vid.element)
 		}
 		

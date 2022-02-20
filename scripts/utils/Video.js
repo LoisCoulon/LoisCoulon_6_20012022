@@ -5,7 +5,6 @@ class Video {
         this.alt = alt
         this.dataId = dataId
         this.classname = classname
-        this.create()
     }
     create() {
         this.element = document.createElement('video')
