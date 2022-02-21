@@ -206,7 +206,7 @@ main {
   margin: 10px;
   position: relative;
   user-select: none;
-  width: 250px;
+  min-width: 200px;
 }
 .photo_section .filter-form .select {
   position: relative;
@@ -219,7 +219,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 0 22px;
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: 300;
   color: white;
   height: 60px;
@@ -228,6 +228,9 @@ main {
   cursor: pointer;
   border-radius: 5px;
   border-style: none;
+}
+.photo_section .filter-form .select__trigger:hover {
+  background: #D3573C;
 }
 .photo_section .filter-form .custom-options {
   position: absolute;
@@ -268,8 +271,8 @@ main {
 }
 .photo_section .filter-form .arrow {
   position: relative;
-  height: 15px;
-  width: 15px;
+  height: 0.8em;
+  width: 0.8em;
 }
 .photo_section .filter-form .arrow::before, .photo_section .filter-form .arrow::after {
   content: "";

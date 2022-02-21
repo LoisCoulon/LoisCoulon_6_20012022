@@ -46,7 +46,6 @@ function photographerFactory(data) {  // eslint-disable-line no-unused-vars
 		const pTagline = document.createElement("p")
 		const alt = name
 		const pPrice = document.createElement("p")
-		const contactName = name
 
 		img.setAttribute("src", picture)
 		img.setAttribute("alt", alt)
@@ -65,7 +64,7 @@ function photographerFactory(data) {  // eslint-disable-line no-unused-vars
 		info.appendChild(location)
 		info.appendChild(pTagline)
 
-		return {info, img, pPrice, contactName}
+		return {info, img, pPrice}
 
 	}	
 

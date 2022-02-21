@@ -11,14 +11,7 @@ class Lightbox { // eslint-disable-line no-unused-vars
   }
 
   next() {
-    let list = [];
-
-    for (let i = 0; i < this.listElement.length; i++) {
-      if (this.listElement[i].photographerId === getUrlId()) { // eslint-disable-line no-undef
-        // eslint-disable-line no-undef
-        list.push(this.listElement[i]);
-      }
-    }
+    let list = this.listElement;
 
     let index = list.findIndex(
       (element) => element.id === this.currentElement.id
@@ -33,14 +26,7 @@ class Lightbox { // eslint-disable-line no-unused-vars
   }
 
   previous() {
-    let list = [];
-
-    for (let i = 0; i < this.listElement.length; i++) {
-      if (this.listElement[i].photographerId === getUrlId()) { // eslint-disable-line no-undef
-        // eslint-disable-line no-undef
-        list.push(this.listElement[i]);
-      }
-    }
+    let list = this.listElement;
 
     let index = list.findIndex(
       (element) => element.id === this.currentElement.id
@@ -66,10 +52,11 @@ class Lightbox { // eslint-disable-line no-unused-vars
     document.querySelector("#lightbox .close").addEventListener("click", () => {
       this.close();
     });
-    document.querySelector("#lightbox").addEventListener("click", (e) => {
+    const lightbox = document.querySelector("#lightbox")
+    lightbox.addEventListener("click", (e) => {
       if (e.target === e.currentTarget) this.close();
     });
-    document.addEventListener("keyup", (e) => {
+    lightbox.addEventListener("keyup", (e) => {
       switch (e.key) {
         case "ArrowRight":
           this.next();

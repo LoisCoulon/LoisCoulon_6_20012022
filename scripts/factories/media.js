@@ -42,6 +42,7 @@ function mediaFactory(data) {  // eslint-disable-line no-unused-vars
 		nbLike.setAttribute("role", "text")
 		nbLike.setAttribute("aria-label", "nombre de likes")
 		heart.setAttribute("aria-label", "cliquer pour liker la photo")
+		article.setAttribute("aria-haspopup", "true")
 
 		h2.textContent = title
 		nbLike.textContent = likes

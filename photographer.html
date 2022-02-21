@@ -17,11 +17,11 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" aria-label="Contact Me" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" aria-haspopup="true" aria-label="Contact Me" onclick="displayModal()">Contactez-moi</button>
       </div>
       <section class="photo_section">
         <form class="filter-form" action="#" method="POST">
-          <p class="select-menu-label">Trier par</p>
+          <p class="select-menu-label" id="select-menu-label">Trier par</p>
           <div class="select-wrapper" id="filter">
             <div class="select">
                 <button role="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-menu-label" class="select__trigger">
@@ -36,7 +36,7 @@
             </div>
         </div>
         </form>
-        <div class="cards" id="cards" role="img">
+        <div class="cards" id="cards">
         </div>
       </section>
       <div class="insert">
