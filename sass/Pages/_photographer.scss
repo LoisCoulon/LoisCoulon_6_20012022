@@ -44,7 +44,7 @@ main {
 
 .contact_button {
   order: 2;
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
   color: white;
   padding: 11px;
@@ -133,21 +133,111 @@ main {
   margin: 50px 100px;
 
   .filter-form {
-    label {
+    display: flex;
+    p {
+      margin: 10px;
       font-size: 1.2em;
       font-weight: 600;
+      align-self: center;
     }
-    select {
-      font-size: 1.2em;
-      font-weight: 600;
+    li, span{
+      font-size: 1.3em;
+    }
+    .select-wrapper {
+      margin: 10px;
+      position: relative;
+      user-select: none;
+      width: 250px;
+    }
+    .select {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .select__trigger {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 22px;
+      font-size: 20px;
+      font-weight: 300;
       color: white;
-      padding: 11px;
-      width: 170px;
-      border: none;
-      background-color: $primary;
-      border-radius: 5px;
+      height: 60px;
+      line-height: 60px;
+      background: $primary;
       cursor: pointer;
-      margin: 0 20px;
+      border-radius: 5px;
+      border-style: none;
+    }
+    .custom-options {
+      position: absolute;
+      display: block;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: $primary;
+      transition: all 0.5s;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 2;
+      border-radius: 0 0 5px 5px;
+    }
+    .select.open .custom-options {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+    .custom-option {
+      position: relative;
+      display: block;
+      padding: 0 22px 0 22px;
+      font-weight: 300;
+      color: white;
+      line-height: 60px;
+      cursor: pointer;
+      transition: all 0.5s;
+      border-top: 1px solid white;
+    }
+    .custom-option:hover {
+      cursor: pointer;
+      background-color: $secondary;
+    }
+    .custom-option.selected {
+      display: none;
+    }
+    
+    .arrow {
+      position: relative;
+      height: 15px;
+      width: 15px;
+    }
+    .arrow::before, .arrow::after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      width: 0.15rem;
+      height: 100%;
+      transition: all 0.5s;
+    }
+    .arrow::before {
+      left: -5px;
+      transform: rotate(45deg);
+      background-color: white;
+    }
+    .arrow::after {
+      left: 5px;
+      transform: rotate(-45deg);
+      background-color: white;
+    }
+    .open .arrow::before {
+      left: -5px;
+      transform: rotate(-45deg);
+    }
+    .open .arrow::after {
+      left: 5px;
+      transform: rotate(45deg);
     }
   }
 }
@@ -289,16 +379,28 @@ main {
       right: 0;
       margin: 0 10px;
       cursor: pointer;
-      font-size: 3.5em;
+      font-size: 4em;
       color: $primary;
       font-weight: 600;
       height: auto;
+      &:hover{
+        background-color: $secondary;
+        color: $light
+      }
     }
     .next {
       @include arrow;
+      &:hover{
+        background-color: $secondary;
+        color: $light
+      }
     }
     .previous {
       @include arrow;
+      &:hover{
+        background-color: $secondary;
+        color: $light
+      }
     }
     .title {
       color: $primary;

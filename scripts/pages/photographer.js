@@ -135,12 +135,11 @@ const sortByTitle = (a, b) => {
 
 // Fonction de filtrage des photos
 function onChangeFilter(medias) {
-  let form = document.querySelector('.filter-form')
-  form.addEventListener('change', e => {
-      const filter = e.target.value
+  let form = document.querySelector('.custom-options')
+  form.addEventListener('click', e => {
+      const filter = e.target.textContent
       const article = document.querySelectorAll(".media")
       let sortFunction
-
       if (filter === "Date") {
         sortFunction = sortByDate
       } else if (filter === "Popularité") {
@@ -164,6 +163,53 @@ function onChangeFilter(medias) {
   })
 }
 
+  //Gestion de la listbox de tri
+  document.querySelector('.select-wrapper').addEventListener('click', function(e) {
+    e.preventDefault()
+    this.querySelector('.select').classList.toggle('open');
+})
+for (const option of document.querySelectorAll(".custom-option")) {
+  option.addEventListener('click', function() {
+      if (!this.classList.contains('selected')) {
+          this.parentNode.querySelector('.custom-option.selected').setAttribute("aria-selected", 'false')
+          this.parentNode.querySelector('.custom-option.selected').classList.remove('selected');
+          this.classList.add('selected');
+          this.setAttribute("aria-selected", 'true')
+          this.closest('.select').querySelector('.select__trigger span').textContent = this.textContent;
+      }
+  })
+}
+window.addEventListener('click', function(e) {
+  const select = document.querySelector('.select')
+  if (!select.contains(e.target)) {
+      select.classList.remove('open');
+  }
+});
+
+document.querySelector('.select-wrapper').addEventListener('click', function () {
+    this.querySelector('.select').classList.toggle('open');
+})
+for (const dropdown of document.querySelectorAll(".select-wrapper")) {
+  dropdown.addEventListener('click', function() {
+      this.querySelector('.select').classList.toggle('open');
+  })
+}
+
+window.addEventListener('click', function (e) {
+    const select = document.querySelector('.select')
+    if (!select.contains(e.target)) {
+        select.classList.remove('open');
+    }
+});
+
+window.addEventListener('click', function(e) {
+  for (const select of document.querySelectorAll('.select')) {
+      if (!select.contains(e.target)) {
+          select.classList.remove('open');
+      }
+  }
+});
+
 
 async function init() {
   // Récupère les datas des photographes
@@ -180,20 +226,19 @@ async function init() {
   }
 
   // On récupère les médias à afficher sur la page
-  const filter = document.getElementById("filter")
+  const filter = document.querySelector(".select__trigger span")
   for (let index = 0; index < media.length; index++) {
     if(media[index].photographerId === id) {
       newMedias.push(media[index])
-      if(filter.value === "Popularité") {
+      if(filter.textContent === "Popularité") {
         newMedias.sort(sortByLikes)
-      } else if (filter.value === "Date") {
+      } else if (filter.textContent === "Date") {
         newMedias.sort(sortByDate)
       } else {
         newMedias.sort(sortByTitle)
       }
     }
   }
-
 
   displayMedia(newMedias);
   displayPhotographer(newPhotographers);

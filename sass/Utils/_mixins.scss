@@ -1,11 +1,10 @@
 @mixin arrow {
     cursor: pointer;
-    height: 30px;
     padding: 10px;
     align-self: center;
     display: flex;
     align-items: center;
-    font-size: 50px;
+    font-size: 5em;
     font-weight: 800;
     color: $primary;
     background-color: transparent;

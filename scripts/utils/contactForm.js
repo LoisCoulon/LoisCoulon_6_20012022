@@ -45,7 +45,7 @@ function getForm() {
 }
 
 const form = document.getElementById('form')
-const btn = document.getElementById('btn')
+const btn = document.getElementById('contact_button')
 btn.addEventListener('click', function(e) {
 	e.preventDefault()
 	getForm()

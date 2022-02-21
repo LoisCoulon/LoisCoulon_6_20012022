@@ -21,14 +21,22 @@
       </div>
       <section class="photo_section">
         <form class="filter-form" action="#" method="POST">
-          <label for="filter">Trier par</label>
-          <select name="filter" id="filter">
-            <option value="Popularité" selected>Popularité</option>
-            <option value="Date">Date</option>
-            <option value="Titre">Titre</option>
-          </select>
+          <p class="select-menu-label">Trier par</p>
+          <div class="select-wrapper" id="filter">
+            <div class="select">
+                <button role="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-menu-label" class="select__trigger">
+                  <span>Popularité</span>
+                    <div aria-hidden="true" class="arrow"></div>
+                </button>
+                <ul class="custom-options" role="listbox">
+                    <li role="option" aria-selected="true" class="custom-option selected" data-value="Popularité">Popularité</li>
+                    <li role="option" aria-selected="false" class="custom-option" data-value="Date">Date</li>
+                    <li role="option" aria-selected="false" class="custom-option" data-value="Titre">Titre</li>
+                </ul>
+            </div>
+        </div>
         </form>
-        <div class="cards" id="cards">
+        <div class="cards" id="cards" role="img">
         </div>
       </section>
       <div class="insert">
@@ -61,13 +69,13 @@
 						<label id="YourMessage" for="message">Votre message</label>
 						<textarea aria-labelledby="YourMessage" rows="5" name="message" id="message"></textarea>
 					</div>
-          <button id="btn" class="contact_button" aria-label="Send" onclick="getForm">Envoyer</button>
+          <button id="contact_button" class="contact_button" aria-label="Send" onclick="getForm">Envoyer</button>
 				</form>
 			</div>
 		</div>
     <div id="lightbox" >
-      <div class="content" aria-label="Image closeup view">
-        <div class="close" aria-label="close dialog">x</div>
+      <div class="content" aria-label="Image closeup view" role="dialog">
+        <div class="close" aria-label="close dialog" role="button">x</div>
         <button class="previous" aria-label="previous image">&lt;</button>
         <img src="#" class="picture" alt="">
         <video src="#" class="movie"></video>
