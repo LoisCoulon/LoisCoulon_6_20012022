@@ -14,7 +14,7 @@ header {
 }
 
 h1 {
-  color: #901C1C;
+  color: #901c1c;
   margin-right: 100px;
 }
 
@@ -41,7 +41,7 @@ h1 {
   align-items: center;
 }
 .photographer_section .photographer a h2 {
-  color: #D3573C;
+  color: #d3573c;
   font-size: 2.2em;
 }
 .photographer_section .photographer a img {
@@ -52,7 +52,7 @@ h1 {
   object-fit: cover;
 }
 .photographer_section .photographer .location {
-  color: #901C1C;
+  color: #901c1c;
   font-size: 1em;
 }
 .photographer_section .photographer .tagline {
@@ -91,12 +91,12 @@ main {
   order: 1;
 }
 .photograph-header .info .name {
-  color: #D3573C;
+  color: #d3573c;
   font-size: 3em;
   text-decoration: none;
 }
 .photograph-header .info .location {
-  color: #901C1C;
+  color: #901c1c;
   font-size: 1.5em;
 }
 .photograph-header .info .tagline {
@@ -114,13 +114,13 @@ main {
   width: 170px;
   height: 70px;
   border: none;
-  background-color: #901C1C;
+  background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
 }
 .contact_button:hover, .contact_button:focus {
   color: black;
-  background-color: #D3573C;
+  background-color: #d3573c;
 }
 
 .contact_modal {
@@ -199,7 +199,8 @@ main {
   font-weight: 600;
   align-self: center;
 }
-.photo_section .filter-form li, .photo_section .filter-form span {
+.photo_section .filter-form li,
+.photo_section .filter-form span {
   font-size: 1.3em;
 }
 .photo_section .filter-form .select-wrapper {
@@ -224,13 +225,14 @@ main {
   color: white;
   height: 60px;
   line-height: 60px;
-  background: #901C1C;
+  background: #901c1c;
   cursor: pointer;
   border-radius: 5px;
   border-style: none;
 }
 .photo_section .filter-form .select__trigger:hover {
-  background: #D3573C;
+  background: #d3573c;
+  color: black;
 }
 .photo_section .filter-form .custom-options {
   position: absolute;
@@ -238,7 +240,7 @@ main {
   top: 100%;
   left: 0;
   right: 0;
-  background: #901C1C;
+  background: #901c1c;
   transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
@@ -264,7 +266,12 @@ main {
 }
 .photo_section .filter-form .custom-option:hover {
   cursor: pointer;
-  background-color: #D3573C;
+  background-color: #d3573c;
+  color: black;
+}
+.photo_section .filter-form .custom-option:hover {
+  cursor: pointer;
+  background-color: #d3573c;
 }
 .photo_section .filter-form .custom-option.selected {
   display: none;
@@ -274,7 +281,8 @@ main {
   height: 0.8em;
   width: 0.8em;
 }
-.photo_section .filter-form .arrow::before, .photo_section .filter-form .arrow::after {
+.photo_section .filter-form .arrow::before,
+.photo_section .filter-form .arrow::after {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -329,7 +337,7 @@ main {
   justify-content: space-between;
 }
 .cards .card-info h2 {
-  color: #901C1C;
+  color: #901c1c;
   font-weight: 500;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -339,7 +347,7 @@ main {
   align-self: center;
   font-size: 1.1em;
   font-weight: 600;
-  color: #901C1C;
+  color: #901c1c;
   margin: 3px;
 }
 .cards .card-info .fas {
@@ -351,11 +359,11 @@ main {
 }
 .cards .card-info .fas:hover {
   transform: scale(1.1);
-  color: #901C1C;
+  color: #901c1c;
 }
 .cards .card-info .liked {
   transform: scale(1.1);
-  color: #901C1C;
+  color: #901c1c;
 }
 .cards .card-info .like {
   display: flex;
@@ -364,7 +372,7 @@ main {
 .insert {
   width: 300px;
   height: 70px;
-  background-color: #D3573C;
+  background-color: #d3573c;
   position: fixed;
   bottom: 0;
   right: 30px;
@@ -437,12 +445,12 @@ main {
   margin: 0 10px;
   cursor: pointer;
   font-size: 4em;
-  color: #901C1C;
+  color: #901c1c;
   font-weight: 600;
   height: auto;
 }
 #lightbox .content .close:hover {
-  background-color: #D3573C;
+  background-color: #d3573c;
   color: #fafafa;
 }
 #lightbox .content .next {
@@ -453,13 +461,13 @@ main {
   align-items: center;
   font-size: 5em;
   font-weight: 800;
-  color: #901C1C;
+  color: #901c1c;
   background-color: transparent;
   border-radius: 5px;
   border: none;
 }
 #lightbox .content .next:hover {
-  background-color: #D3573C;
+  background-color: #d3573c;
   color: #fafafa;
 }
 #lightbox .content .previous {
@@ -470,17 +478,17 @@ main {
   align-items: center;
   font-size: 5em;
   font-weight: 800;
-  color: #901C1C;
+  color: #901c1c;
   background-color: transparent;
   border-radius: 5px;
   border: none;
 }
 #lightbox .content .previous:hover {
-  background-color: #D3573C;
+  background-color: #d3573c;
   color: #fafafa;
 }
 #lightbox .content .title {
-  color: #901C1C;
+  color: #901c1c;
   position: absolute;
   bottom: 0;
   margin: 10px 10%;

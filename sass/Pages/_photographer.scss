@@ -172,6 +172,7 @@ main {
       border-style: none;
       &:hover {
         background: $secondary;
+        color: black;
       }
     }
     .custom-options {
@@ -203,6 +204,12 @@ main {
       cursor: pointer;
       transition: all 0.5s;
       border-top: 1px solid white;
+
+      &:hover{
+        cursor: pointer;
+        background-color: $secondary;
+        color: black;
+      }
     }
     .custom-option:hover {
       cursor: pointer;
