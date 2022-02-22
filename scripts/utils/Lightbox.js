@@ -73,6 +73,8 @@ class Lightbox {  // eslint-disable-line no-unused-vars
 
   close() {
     document.querySelector("#lightbox").classList.remove("show");
+    document.querySelector("#lightbox").setAttribute("aria-hidden", "true");
+    document.querySelector("#main").setAttribute("aria-hidden", "false");
   }
 
   getElementById(id) {
@@ -81,7 +83,6 @@ class Lightbox {  // eslint-disable-line no-unused-vars
 
   display() {
     let photographerId = this.currentElement.photographerId;
-
     let image = document.querySelector("#lightbox .content .picture");
     let movie = document.querySelector("#lightbox .content .movie");
 
@@ -102,5 +103,7 @@ class Lightbox {  // eslint-disable-line no-unused-vars
     document.querySelector("#lightbox").classList.add("show");
 
     document.querySelector(".title").textContent = this.currentElement.title;
+    document.querySelector("#lightbox").setAttribute("aria-hidden", "false");
+    document.querySelector("#main").setAttribute("aria-hidden", "true");
   }
 }

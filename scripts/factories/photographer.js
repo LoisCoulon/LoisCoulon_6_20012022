@@ -11,10 +11,9 @@ function photographerFactory(data) { // eslint-disable-line no-unused-vars
     const pTagline = document.createElement("p");
     const pPrice = document.createElement("p");
     const a = document.createElement("a");
-    const alt = name;
 
     img.setAttribute("src", picture);
-    img.setAttribute("alt", alt);
+    img.setAttribute("alt", "");
     article.setAttribute("class", "photographer");
     location.setAttribute("class", "location");
     pTagline.setAttribute("class", "tagline");
