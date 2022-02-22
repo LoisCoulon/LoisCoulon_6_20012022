@@ -208,37 +208,32 @@ async function init() {
   // Récupère les datas des photographes
   const { media, photographers } = await getMedia();
   const id = getUrlId();
-  const newMedias = [];
-  let newPhotographers;
 
   // On récupère le photographe à afficher sur la page
-  for (let index = 0; index < photographers.length; index++) {
-    index = photographers.find((element) => element.id === id);
-    newPhotographers = index;
-  }
+  const photographer = photographers.find((element) => element.id === id);
 
-  // On récupère les médias à afficher sur la page
+  // On récupère les médias à afficher sur la page 
+  const mediaFiltered = media.filter(
+    (element) => element.photographerId === id
+  );
+
+  //On filtre l'ordre d'apparition des médias par défaut
   const filter = document.querySelector(".select__trigger span");
-  for (let index = 0; index < media.length; index++) {
-    if (media[index].photographerId === id) {
-      newMedias.push(media[index]);
-    }
-  }
 
   if (filter.textContent === "Popularité") {
-    newMedias.sort(sortByLikes);
+    mediaFiltered.sort(sortByLikes);
   } else if (filter.textContent === "Date") {
-    newMedias.sort(sortByDate);
+    mediaFiltered.sort(sortByDate);
   } else {
-    newMedias.sort(sortByTitle);
+    mediaFiltered.sort(sortByTitle);
   }
 
-  displayMedia(newMedias);
-  displayPhotographer(newPhotographers);
-  displaySumOfLikes(newMedias);
-  displayLightbox(newMedias);
+  displayMedia(mediaFiltered);
+  displayPhotographer(photographer);
+  displaySumOfLikes(mediaFiltered);
+  displayLightbox(mediaFiltered);
   likeButton();
-  onChangeFilter(newMedias);
+  onChangeFilter(mediaFiltered);
 }
 
 init();
