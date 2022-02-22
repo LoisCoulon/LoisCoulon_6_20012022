@@ -1,4 +1,4 @@
-class Lightbox { // eslint-disable-line no-unused-vars
+class Lightbox {  // eslint-disable-line no-unused-vars
   constructor(listElement) {
     this.currentElement = null;
     this.listElement = listElement;
@@ -52,7 +52,7 @@ class Lightbox { // eslint-disable-line no-unused-vars
     document.querySelector("#lightbox .close").addEventListener("click", () => {
       this.close();
     });
-    const lightbox = document.querySelector("#lightbox")
+    const lightbox = document.querySelector("#lightbox");
     lightbox.addEventListener("click", (e) => {
       if (e.target === e.currentTarget) this.close();
     });

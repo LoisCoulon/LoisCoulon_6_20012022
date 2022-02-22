@@ -140,7 +140,8 @@ main {
       font-weight: 600;
       align-self: center;
     }
-    li, span{
+    li,
+    span {
       font-size: 1.3em;
     }
     .select-wrapper {
@@ -169,7 +170,7 @@ main {
       cursor: pointer;
       border-radius: 5px;
       border-style: none;
-      &:hover{
+      &:hover {
         background: $secondary;
       }
     }
@@ -210,13 +211,14 @@ main {
     .custom-option.selected {
       display: none;
     }
-    
+
     .arrow {
       position: relative;
       height: 0.8em;
       width: 0.8em;
     }
-    .arrow::before, .arrow::after {
+    .arrow::before,
+    .arrow::after {
       content: "";
       position: absolute;
       bottom: 0px;
@@ -386,23 +388,23 @@ main {
       color: $primary;
       font-weight: 600;
       height: auto;
-      &:hover{
+      &:hover {
         background-color: $secondary;
-        color: $light
+        color: $light;
       }
     }
     .next {
       @include arrow;
-      &:hover{
+      &:hover {
         background-color: $secondary;
-        color: $light
+        color: $light;
       }
     }
     .previous {
       @include arrow;
-      &:hover{
+      &:hover {
         background-color: $secondary;
-        color: $light
+        color: $light;
       }
     }
     .title {

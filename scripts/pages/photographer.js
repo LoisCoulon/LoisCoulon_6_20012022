@@ -212,7 +212,7 @@ async function init() {
   // On récupère le photographe à afficher sur la page
   const photographer = photographers.find((element) => element.id === id);
 
-  // On récupère les médias à afficher sur la page 
+  // On récupère les médias à afficher sur la page
   const mediaFiltered = media.filter(
     (element) => element.photographerId === id
   );
