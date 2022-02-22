@@ -14,10 +14,12 @@ function mediaFactory(data) { // eslint-disable-line no-unused-vars
     if (image) {
       const img = new Img("image", picture, title, id, "media-content"); // eslint-disable-line no-undef
       img.create();
+      img.element.setAttribute("tabindex", "0")
       article.appendChild(img.element);
     } else {
       const vid = new Video("video", picture, title, id, "media-content"); // eslint-disable-line no-undef
       vid.create();
+      vid.element.setAttribute("tabindex", "0")
       article.appendChild(vid.element);
     }
 

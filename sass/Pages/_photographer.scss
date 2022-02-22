@@ -172,6 +172,11 @@ main {
       border-style: none;
       &:hover {
         background: $secondary;
+        color: black;
+        transition: 200ms;
+      }
+      &:hover .arrow::after, &:hover .arrow::before{
+        background-color: black;
       }
     }
     .custom-options {
@@ -203,11 +208,13 @@ main {
       cursor: pointer;
       transition: all 0.5s;
       border-top: 1px solid white;
+      &:hover {
+        background: $secondary;
+        color: black;
+        transition: 200ms;
+      }
     }
-    .custom-option:hover {
-      cursor: pointer;
-      background-color: $secondary;
-    }
+
     .custom-option.selected {
       display: none;
     }
@@ -253,23 +260,18 @@ main {
   gap: 70px;
   margin-top: 50px;
 
-  article {
+  .media {
     height: 40vh;
     width: 20vw;
     border-radius: 5px;
-  }
 
-  img {
-    height: 90%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-  video {
-    height: 90%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+    .media-content {
+      height: 90%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
 
   .card-info {
