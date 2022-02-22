@@ -1,73 +1,47 @@
-function mediaFactory(data) {  // eslint-disable-line no-unused-vars
-	const { title, photographerId, image, likes, date, price, id, video } = data
-	
-	function getMediaDOM() {
+function mediaFactory(data) { // eslint-disable-line no-unused-vars
+  const { title, photographerId, image, likes, date, price, id, video } = data;
 
-		const article = document.createElement('article')
-		const h2 = document.createElement('h2')
-		const div = document.createElement('div')
-		const nbLike = document.createElement('span')
-		const heart = document.createElement('em')
-		const like = document.createElement("div")
+  function getMediaDOM() {
+    const article = document.createElement("article");
+    const h2 = document.createElement("h2");
+    const div = document.createElement("div");
+    const nbLike = document.createElement("span");
+    const heart = document.createElement("em");
+    const like = document.createElement("div");
 
-		let name = ""
-		if(photographerId === 82) {
-			name = "Tracy"
-		} else if (photographerId === 243) {
-			name = "Mimi"
-		} else if (photographerId === 930) {
-			name = "Ellie-Rose"
-		} else if (photographerId === 527) {
-			name = "Nabeel"
-		} else if (photographerId === 925) {
-			name = "Rhode"
-		} else if (photographerId === 195) {
-			name = "Marcel"
-		}
-	
-		const picture = `assets/images/${name}/${image ? image : video}`
+    const picture = `assets/images/${photographerId}/${image ? image : video}`;
 
-		if (image) {
-			const img = new Img(
-				"image",
-				picture,
-				title,
-				id,
-				"media-content"
-			)
-			article.appendChild(img.element)
-		} else {
-			const vid = new Video(
-				"video",
-				picture,
-				title,
-				id,
-				"media-content"
-			)
-			article.appendChild(vid.element)
-		}
-		
-		heart.setAttribute("class", "fas fa-heart")
-		div.setAttribute("class", "card-info")
-		like.setAttribute("class", "like")
-		nbLike.setAttribute("class", "nb-like")
-		article.setAttribute("class", "media")
-		nbLike.setAttribute("role", "text")
-		nbLike.setAttribute("aria-label", "nombre de likes")
-		heart.setAttribute("aria-label", "cliquer pour liker la photo")
+    if (image) {
+      const img = new Img("image", picture, title, id, "media-content"); // eslint-disable-line no-undef
+      img.create();
+      article.appendChild(img.element);
+    } else {
+      const vid = new Video("video", picture, title, id, "media-content"); // eslint-disable-line no-undef
+      vid.create();
+      article.appendChild(vid.element);
+    }
 
-		h2.textContent = title
-		nbLike.textContent = likes
+    heart.setAttribute("class", "fas fa-heart");
+    div.setAttribute("class", "card-info");
+    like.setAttribute("class", "like");
+    nbLike.setAttribute("class", "nb-like");
+    article.setAttribute("class", "media");
+    nbLike.setAttribute("role", "text");
+    nbLike.setAttribute("aria-label", "nombre de likes");
+    heart.setAttribute("aria-label", "cliquer pour liker la photo");
+    article.setAttribute("aria-haspopup", "true");
 
-		article.appendChild(div)
-		div.appendChild(h2)
-		div.appendChild(like)
-		like.appendChild(nbLike)
-		like.appendChild(heart)
+    h2.textContent = title;
+    nbLike.textContent = likes;
 
-		return article 
+    article.appendChild(div);
+    div.appendChild(h2);
+    div.appendChild(like);
+    like.appendChild(nbLike);
+    like.appendChild(heart);
 
-	}
+    return article;
+  }
 
-	return { title, photographerId, image, likes, date, price, id, getMediaDOM }
+  return { title, photographerId, image, likes, date, price, id, getMediaDOM };
 }

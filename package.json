@@ -1,0 +1,25 @@
+{
+  "name": "LoisCoulon_6_20012022",
+  "version": "1.0.0",
+  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "prettier": "^2.5.1"
+  },
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoisCoulon/LoisCoulon_6_20012022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LoisCoulon/LoisCoulon_6_20012022/issues"
+  },
+  "homepage": "https://github.com/LoisCoulon/LoisCoulon_6_20012022#readme"
+}
