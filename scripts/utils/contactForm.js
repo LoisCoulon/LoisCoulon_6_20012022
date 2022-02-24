@@ -6,7 +6,8 @@ function displayModal() { // eslint-disable-line no-unused-vars
   modal.style.display = "block";
   modal.setAttribute("aria-hidden", "false");
   main.setAttribute("aria-hidden", "true");
-  main.style.opacity = "30%";
+  main.style.display = "none"
+  document.querySelector("header").style.display = "none"
 }
 
 //Ferme le formulaire de contact
@@ -14,7 +15,8 @@ function closeModal() {
   modal.style.display = "none";
   modal.setAttribute("aria-hidden", "true");
   main.setAttribute("aria-hidden", "false");
-  main.style.opacity = "unset";
+  main.style.display = "block"
+  document.querySelector("header").style.display = "flex"
 }
 
 modal.addEventListener("keyup", (e) => {
